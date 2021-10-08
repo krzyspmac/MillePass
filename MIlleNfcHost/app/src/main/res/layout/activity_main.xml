@@ -4,9 +4,10 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:padding="15dp"
   tools:context=".MainActivity">
 
-  <Button
+  <!--Button
     android:id="@+id/buttonStartService"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -14,6 +15,31 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    app:layout_constraintTop_toTopOf="parent" /-->
+
+  <ImageView
+    android:id="@+id/imageGate"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/tripod_gate"
+    android:scaleType="centerCrop"
+    android:adjustViewBounds="true"
+
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+
+  <TextView
+    android:id="@+id/buttonStartService"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="20sp"
+    android:layout_marginTop="20dp"
+    android:text="Scan your card!"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imageGate"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

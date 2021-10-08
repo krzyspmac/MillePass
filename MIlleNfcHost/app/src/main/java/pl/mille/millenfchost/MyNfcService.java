@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import java.math.BigInteger;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 /**
  * Created by justin.ribeiro on 10/27/2014.
@@ -118,7 +120,10 @@ public class MyNfcService extends HostApduService {
 
   private static final byte[] NOT_AUTH = {
       (byte) 0x45,  // SW1	Status byte 1 - Command processing status
-      (byte) 0x12   // SW2	Status byte 2 - Command processing qualifier
+      (byte) 0x12,   // SW2	Status byte 2 - Command processing qualifier
+      (byte) 0x00,  // P1 - user identifier
+      (byte) 0x00, // P2	- Parameter 2 - Instruction parameter 2
+      (byte) 0x00  //  Le field
   };
 
   private static final byte[] NDEF_ID = {
@@ -163,6 +168,7 @@ public class MyNfcService extends HostApduService {
     return 0;
   }
 
+
   @Override
   public byte[] processCommandApdu(byte[] commandApdu, Bundle extras) {
 
@@ -172,44 +178,138 @@ public class MyNfcService extends HostApduService {
     //
     Log.i(TAG, "processCommandApdu() | incoming commandApdu: " + MyUtils.bytesToHex(commandApdu));
 
-    // First command - sign in
-    Log.i(TAG, "processCommandApdu() | command[0] = " + MyUtils.byteToInt(commandApdu[0]));
+    //
+    // First command: NDEF Tag Application select (Section 5.5.2 in NFC Forum spec)
+    //
+    if (MyUtils.isEqual(APDU_SELECT, commandApdu)) {
+      Log.i(TAG, "APDU_SELECT triggered. Our Response: " + MyUtils.bytesToHex(A_OKAY));
+      return A_OKAY;
+    }
+
+    //
+    // Second command: Capability Container select (Section 5.5.3 in NFC Forum spec)
+    //
+    if (MyUtils.isEqual(CAPABILITY_CONTAINER, commandApdu)) {
+      Log.i(TAG, "CAPABILITY_CONTAINER triggered. Our Response: " + MyUtils.bytesToHex(A_OKAY));
+      return A_OKAY;
+    }
+
+    //
+    // Third command: ReadBinary data from CC file (Section 5.5.4 in NFC Forum spec)
+    //
+    if (MyUtils.isEqual(READ_CAPABILITY_CONTAINER, commandApdu) && !READ_CAPABILITY_CONTAINER_CHECK) {
+      Log.i(TAG, "READ_CAPABILITY_CONTAINER triggered. Our Response: " + MyUtils.bytesToHex(READ_CAPABILITY_CONTAINER_RESPONSE));
+      READ_CAPABILITY_CONTAINER_CHECK = true;
+      return READ_CAPABILITY_CONTAINER_RESPONSE;
+    }
+
+    //
+    // Fourth command: NDEF Select command (Section 5.5.5 in NFC Forum spec)
+    //
+    if (MyUtils.isEqual(NDEF_SELECT, commandApdu)) {
+      Log.i(TAG, "NDEF_SELECT triggered. Our Response: " + MyUtils.bytesToHex(A_OKAY));
+      return A_OKAY;
+    }
+
+    //
+    // Fifth command:  ReadBinary, read NLEN field
+    //
+    if (MyUtils.isEqual(NDEF_READ_BINARY_NLEN, commandApdu)) {
+
+      byte[] start = {
+          (byte) 0x00
+      };
+
+      // Build our response
+      byte[] response = new byte[start.length + NDEF_URI_LEN.length + A_OKAY.length];
+
+      System.arraycopy(start, 0, response, 0, start.length);
+      System.arraycopy(NDEF_URI_LEN, 0, response, start.length, NDEF_URI_LEN.length);
+      System.arraycopy(A_OKAY, 0, response, start.length + NDEF_URI_LEN.length, A_OKAY.length);
+
+      Log.i(TAG, response.toString());
+      Log.i(TAG, "NDEF_READ_BINARY_NLEN triggered. Our Response: " + MyUtils.bytesToHex(response));
+
+      return response;
+    }
+
+    //
+    // Sixth command: ReadBinary, get NDEF data
+    //
+    if (MyUtils.isEqual(NDEF_READ_BINARY_GET_NDEF, commandApdu)) {
+      Log.i(TAG, "processCommandApdu() | NDEF_READ_BINARY_GET_NDEF triggered");
+
+      byte[] start = {
+          (byte) 0x00
+      };
+
+      // Build our response
+      byte[] response = new byte[start.length + NDEF_URI_LEN.length + NDEF_URI_BYTES.length + A_OKAY.length];
+
+      System.arraycopy(start, 0, response, 0, start.length);
+      System.arraycopy(NDEF_URI_LEN, 0, response, start.length, NDEF_URI_LEN.length);
+      System.arraycopy(NDEF_URI_BYTES, 0, response, start.length + NDEF_URI_LEN.length, NDEF_URI_BYTES.length);
+      System.arraycopy(A_OKAY, 0, response, start.length + NDEF_URI_LEN.length + NDEF_URI_BYTES.length, A_OKAY.length);
+
+      Log.i(TAG, NDEF_URI.toString());
+      Log.i(TAG, "NDEF_READ_BINARY_GET_NDEF triggered. Our Response: " + MyUtils.bytesToHex(response));
+
+      Context context = getApplicationContext();
+      CharSequence text = "NDEF text has been sent to the reader!";
+      int duration = Toast.LENGTH_SHORT;
+      Toast toast = Toast.makeText(context, text, duration);
+      toast.setGravity(Gravity.CENTER, 0, 0);
+      toast.show();
+
+      READ_CAPABILITY_CONTAINER_CHECK = false;
+      return response;
+    }
 
     if (MyUtils.byteToInt(commandApdu[0]) == 0xAA) {
       Log.i(TAG, "processCommandApdu() | incoming sign in action");
 
-      byte userId = commandApdu[2];
-      Log.i(TAG, "processCommandApdu() | user id = " + userId);
+      String userId = MyNfcService.decodeUserId(commandApdu);
 
       User user = userDatabase.getUser(userId);
       if (user != null) {
         byte[] apdu_sign_in = {
             (byte) 0xAA,  // CLA - Class Of Instruction
             (byte) 0xAF,  // Instruction
-            (byte) 0x00,  // P1 - user identifier
+            (byte) user.userToken,  // P1 - user identifier
             (byte) 0x00, // P2	- Parameter 2 - Instruction parameter 2
-            (byte) 0x07, // Lc field	- Number of bytes present in the data field of the command
-            (byte) 0xF0, (byte) 0x39, (byte) 0x41, (byte) 0x48, (byte) 0x14, (byte) 0x81, (byte) 0x00, // NDEF Tag Application name
-            (byte) 0x00  // Le field	- Maximum number of bytes expected in the data field of the response to the command
+            (byte) 0x00  //  Le field
         };
-
-        apdu_sign_in[2] = user.userIdentifier; // p1 user identifier
-
+        apdu_sign_in[2] = user.userToken; // p1 user identifier
+        Log.i(TAG, "processCommandApdu() | user id = " + userId);
         return apdu_sign_in;
       } else {
         return NOT_AUTH;
       }
     }
+      //
+      // We're doing something outside our scope
+      //
+      Log.wtf(TAG, "processCommandApdu() | I don't know what's going on!!!.");
+      return "Can I help you?".getBytes();
 
-    //
-    // We're doing something outside our scope
-    //
-    //Log.wtf(TAG, "processCommandApdu() | I don't know what's going on!!!.");
-    return "Can I help you?".getBytes();
   }
 
   @Override
   public void onDeactivated(int reason) {
     Log.i(TAG, "onDeactivated() Fired! Reason: " + reason);
   }
+
+  public static String decodeUserId(byte[] commandApu) {
+    int startIndex = 5;
+    Charset charset = StandardCharsets.US_ASCII;
+    int length = MyUtils.byteToInt(commandApu[4]);
+
+    byte[] userIdAsBytes = Arrays.copyOfRange(commandApu, startIndex, startIndex + length);
+
+    String result = new String(userIdAsBytes, charset);
+    Log.i(TAG, "user id " + result);
+    return result;
+
+  }
+
 }
