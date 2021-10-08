@@ -1,13 +1,11 @@
 //
-//  MainViewState.swift
+//  MilleStartsViewState.swift
 //  MillenniumPass
 //
 //  Created by Grzegorz Makowski on 08/10/2021.
 //
 
-import Foundation
-
-extension MainView {
+extension MilleStartsView {
     enum Event: EventBase {
         case onAppear
     }
@@ -15,14 +13,14 @@ extension MainView {
     enum State: StateBase {
         case idle
         case loading
-        case loaded(item: MainContentView.Item)
+        case loaded(item: MilleStartsView.Item)
         case error(error: Error)
-        var navigationBarTitle: String { "Millennium Pass" }
+        var navigationBarTitle: String { "Miłe początki" }
     }
 }
 
-extension MainView.State: Equatable {
-    static func == (lhs: MainView.State, rhs: MainView.State) -> Bool {
+extension MilleStartsView.State: Equatable {
+    static func == (lhs: MilleStartsView.State, rhs: MilleStartsView.State) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle): return true
         case (.loading, .loading): return true
@@ -32,3 +30,4 @@ extension MainView.State: Equatable {
         }
     }
 }
+

@@ -75,7 +75,7 @@ final class NFCReader: NSObject {
     }
 
     func endReading() {
-        invalidateSession(error: .end)
+        invalidateSession(error: nil)
     }
 
     private func connectToTag(_ tag: NFCTag) {
@@ -135,7 +135,11 @@ final class NFCReader: NSObject {
     }
 
     private func invalidateSession(error: TagReadingError? = nil) {
-        session?.invalidate(errorMessage: error?.description ?? "")
+        if let error = error {
+            session?.invalidate(errorMessage: error.description ?? "")
+        } else {
+            session?.invalidate()
+        }
         session = nil
     }
 }

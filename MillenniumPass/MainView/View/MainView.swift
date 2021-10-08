@@ -29,7 +29,7 @@ struct MainView: View {
         case .idle:
             return Color.clear.asAnyView
         case .loading:
-            return SpinnerView(isAnimating: true, style: .large).asAnyView
+            return MilleLoaderView().asAnyView
         case .error(let error):
             return Text(error.localizedDescription).asAnyView
         case .loaded(let data):
@@ -37,8 +37,8 @@ struct MainView: View {
         }
     }
     
-    private func mainView(with item: MainView.Item) -> some View {
-        return MainContentView(item: .init())
+    private func mainView(with item: MainContentView.Item) -> some View {
+        return MainContentView(item: item)
     }
 }
 
@@ -48,12 +48,5 @@ struct MainView_Previews: PreviewProvider {
             state: .idle
         )
         return MainView(viewModel: viewModel)
-    }
-}
-
-
-extension MainView {
-    struct Item: Equatable {
-        
     }
 }

@@ -23,15 +23,22 @@
 		168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A082710AC91002ABD73 /* TimeSheetView.swift */; };
 		168C3A0F2710AD4B002ABD73 /* TimeSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */; };
 		168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */; };
-		7F36EC272710B97600C38488 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36EC262710B97600C38488 /* NFCReader.swift */; };
-		7F5C48852710D069005702C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5C48842710D069005702C0 /* User.swift */; };
-		7F5C48892710D0B0005702C0 /* 1.user.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F5C48882710D0B0005702C0 /* 1.user.json */; };
+		168C3A142710B6BA002ABD73 /* MockFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A132710B6BA002ABD73 /* MockFactory.swift */; };
+		168C3A162710D0F7002ABD73 /* MilleLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A152710D0F7002ABD73 /* MilleLoaderView.swift */; };
+		168C3A192710D354002ABD73 /* MilleStartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A182710D354002ABD73 /* MilleStartsView.swift */; };
+		168C3A1B2710D35B002ABD73 /* MilleStartsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A1A2710D35B002ABD73 /* MilleStartsViewState.swift */; };
+		168C3A1D2710D363002ABD73 /* MilleStartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A1C2710D363002ABD73 /* MilleStartsViewModel.swift */; };
+		168C3A1F2710D435002ABD73 /* MilleStartsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A1E2710D435002ABD73 /* MilleStartsRowView.swift */; };
+		7F0923322710DE5A00E58098 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0923302710DE5A00E58098 /* User.swift */; };
+		7F0923332710DE5A00E58098 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0923312710DE5A00E58098 /* NFCReader.swift */; };
+		7F0923362710DE7900E58098 /* 1.user.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F0923352710DE7900E58098 /* 1.user.json */; };
 		7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46827107A2200188E3F /* AppDelegate.swift */; };
 		7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46A27107A2200188E3F /* SceneDelegate.swift */; };
 		7F82A46D27107A2200188E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46C27107A2200188E3F /* ContentView.swift */; };
 		7F82A46F27107A2300188E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A46E27107A2300188E3F /* Assets.xcassets */; };
 		7F82A47227107A2300188E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47127107A2300188E3F /* Preview Assets.xcassets */; };
 		7F82A47527107A2300188E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47327107A2300188E3F /* LaunchScreen.storyboard */; };
+		ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,10 +58,16 @@
 		168C3A082710AC91002ABD73 /* TimeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetView.swift; sourceTree = "<group>"; };
 		168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewModel.swift; sourceTree = "<group>"; };
 		168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewState.swift; sourceTree = "<group>"; };
-		7F36EC262710B97600C38488 /* NFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
-		7F5C48832710CAFB005702C0 /* MillenniumPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MillenniumPass.entitlements; sourceTree = "<group>"; };
-		7F5C48842710D069005702C0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		7F5C48882710D0B0005702C0 /* 1.user.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = 1.user.json; sourceTree = "<group>"; };
+		168C3A132710B6BA002ABD73 /* MockFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactory.swift; sourceTree = "<group>"; };
+		168C3A152710D0F7002ABD73 /* MilleLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleLoaderView.swift; sourceTree = "<group>"; };
+		168C3A182710D354002ABD73 /* MilleStartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleStartsView.swift; sourceTree = "<group>"; };
+		168C3A1A2710D35B002ABD73 /* MilleStartsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleStartsViewState.swift; sourceTree = "<group>"; };
+		168C3A1C2710D363002ABD73 /* MilleStartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleStartsViewModel.swift; sourceTree = "<group>"; };
+		168C3A1E2710D435002ABD73 /* MilleStartsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleStartsRowView.swift; sourceTree = "<group>"; };
+		7F09232E2710DE4F00E58098 /* MillenniumPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MillenniumPass.entitlements; sourceTree = "<group>"; };
+		7F0923302710DE5A00E58098 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F0923312710DE5A00E58098 /* NFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
+		7F0923352710DE7900E58098 /* 1.user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1.user.json; sourceTree = "<group>"; };
 		7F82A46527107A2200188E3F /* MillenniumPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillenniumPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82A46827107A2200188E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F82A46A27107A2200188E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +76,7 @@
 		7F82A47127107A2300188E3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F82A47427107A2300188E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F82A47627107A2300188E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				160BA6BE271082A50075C30B /* SpinnerView.swift */,
+				168C3A152710D0F7002ABD73 /* MilleLoaderView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -185,19 +200,38 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		7F36EC252710B97600C38488 /* NFC */ = {
+		168C3A122710B6AE002ABD73 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				7F36EC262710B97600C38488 /* NFCReader.swift */,
-				7F5C48842710D069005702C0 /* User.swift */,
+				168C3A132710B6BA002ABD73 /* MockFactory.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		168C3A172710D339002ABD73 /* MilleStarts */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A182710D354002ABD73 /* MilleStartsView.swift */,
+				168C3A1A2710D35B002ABD73 /* MilleStartsViewState.swift */,
+				168C3A1C2710D363002ABD73 /* MilleStartsViewModel.swift */,
+				168C3A1E2710D435002ABD73 /* MilleStartsRowView.swift */,
+			);
+			path = MilleStarts;
+			sourceTree = "<group>";
+		};
+		7F09232F2710DE5A00E58098 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				7F0923302710DE5A00E58098 /* User.swift */,
+				7F0923312710DE5A00E58098 /* NFCReader.swift */,
 			);
 			path = NFC;
 			sourceTree = "<group>";
 		};
-		7F5C48872710D094005702C0 /* Users */ = {
+		7F0923342710DE7900E58098 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				7F5C48882710D0B0005702C0 /* 1.user.json */,
+				7F0923352710DE7900E58098 /* 1.user.json */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -221,12 +255,15 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
-				7F5C48872710D094005702C0 /* Users */,
-				7F5C48832710CAFB005702C0 /* MillenniumPass.entitlements */,
-				7F36EC252710B97600C38488 /* NFC */,
+				7F09232F2710DE5A00E58098 /* NFC */,
+				7F09232E2710DE4F00E58098 /* MillenniumPass.entitlements */,
+				168C3A172710D339002ABD73 /* MilleStarts */,
+				ADD559852710DA5600CBCB52 /* WelcomeScreen */,
+				168C3A122710B6AE002ABD73 /* Mock */,
 				160BA6AA271080250075C30B /* Utils */,
 				168C3A072710AC77002ABD73 /* TimeSheet */,
 				160BA6A927107FFA0075C30B /* MainView */,
+				7F0923342710DE7900E58098 /* Users */,
 				7F82A46827107A2200188E3F /* AppDelegate.swift */,
 				7F82A46A27107A2200188E3F /* SceneDelegate.swift */,
 				7F82A46C27107A2200188E3F /* ContentView.swift */,
@@ -244,6 +281,22 @@
 				7F82A47127107A2300188E3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ADD559852710DA5600CBCB52 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ADD559862710DA6000CBCB52 /* View */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		ADD559862710DA6000CBCB52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,7 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F82A47527107A2300188E3F /* LaunchScreen.storyboard in Resources */,
-				7F5C48892710D0B0005702C0 /* 1.user.json in Resources */,
+				7F0923362710DE7900E58098 /* 1.user.json in Resources */,
 				7F82A47227107A2300188E3F /* Preview Assets.xcassets in Resources */,
 				7F82A46F27107A2300188E3F /* Assets.xcassets in Resources */,
 			);
@@ -321,23 +374,30 @@
 				168C3A062710AB0B002ABD73 /* TimeSheetListView.swift in Sources */,
 				160BA6DE2710993B0075C30B /* TimeView.swift in Sources */,
 				160BA6CC27108B0B0075C30B /* NewsList.swift in Sources */,
+				7F0923332710DE5A00E58098 /* NFCReader.swift in Sources */,
 				160BA6BF271082A50075C30B /* SpinnerView.swift in Sources */,
+				7F0923322710DE5A00E58098 /* User.swift in Sources */,
+				168C3A1D2710D363002ABD73 /* MilleStartsViewModel.swift in Sources */,
 				7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */,
+				168C3A1F2710D435002ABD73 /* MilleStartsRowView.swift in Sources */,
 				160BA6B6271081540075C30B /* MainViewState.swift in Sources */,
 				7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */,
-				7F36EC272710B97600C38488 /* NFCReader.swift in Sources */,
 				160BA6AC271080460075C30B /* ViewModel.swift in Sources */,
 				168C3A0F2710AD4B002ABD73 /* TimeSheetViewModel.swift in Sources */,
 				160BA6B0271080E30075C30B /* MainView.swift in Sources */,
 				168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */,
 				168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */,
 				160BA6D0271091750075C30B /* Colors.swift in Sources */,
+				168C3A142710B6BA002ABD73 /* MockFactory.swift in Sources */,
+				168C3A192710D354002ABD73 /* MilleStartsView.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
 				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
+				168C3A1B2710D35B002ABD73 /* MilleStartsViewState.swift in Sources */,
 				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
+				ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */,
+				168C3A162710D0F7002ABD73 /* MilleLoaderView.swift in Sources */,
 				160BA6B3271081100075C30B /* MainViewModel.swift in Sources */,
 				160BA6C4271085B60075C30B /* MainContentView.swift in Sources */,
-				7F5C48852710D069005702C0 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
