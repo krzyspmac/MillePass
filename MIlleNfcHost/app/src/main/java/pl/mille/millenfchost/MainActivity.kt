@@ -14,11 +14,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.v(TAG, "App started")
-        val button = findViewById<Button>(R.id.buttonStartService)
-        button.setOnClickListener {
-            startService()
-        }
-
     }
 
     fun startService() {
