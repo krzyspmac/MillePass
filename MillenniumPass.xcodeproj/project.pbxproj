@@ -43,6 +43,7 @@
 		7F89A2B62710E66F0039828B /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B52710E66F0039828B /* RootViewModel.swift */; };
 		7FB294502710E48700266FDF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2944F2710E48700266FDF /* User.swift */; };
 		AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60E9D62710E028001BC52D /* TextMessageView.swift */; };
+		AD60E9E02710FD11001BC52D /* UserScreenDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60E9DF2710FD11001BC52D /* UserScreenDetails.swift */; };
 		ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		7F89A2B52710E66F0039828B /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		7FB2944F2710E48700266FDF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AD60E9D62710E028001BC52D /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
+		AD60E9DF2710FD11001BC52D /* UserScreenDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenDetails.swift; sourceTree = "<group>"; };
 		ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,6 +269,7 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				AD60E9DE2710FCFA001BC52D /* UserScreenDetails */,
 				7F89A2B22710E6430039828B /* RootView */,
 				AD60E9D82710E172001BC52D /* Text Message */,
 				7F09232F2710DE5A00E58098 /* NFC */,
@@ -312,6 +315,14 @@
 				AD60E9D62710E028001BC52D /* TextMessageView.swift */,
 			);
 			path = "Text Message";
+			sourceTree = "<group>";
+		};
+		AD60E9DE2710FCFA001BC52D /* UserScreenDetails */ = {
+			isa = PBXGroup;
+			children = (
+				AD60E9DF2710FD11001BC52D /* UserScreenDetails.swift */,
+			);
+			path = UserScreenDetails;
 			sourceTree = "<group>";
 		};
 		ADD559852710DA5600CBCB52 /* WelcomeScreen */ = {
@@ -424,6 +435,7 @@
 				168C3A192710D354002ABD73 /* MilleStartsView.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
 				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
+				AD60E9E02710FD11001BC52D /* UserScreenDetails.swift in Sources */,
 				168C3A1B2710D35B002ABD73 /* MilleStartsViewState.swift in Sources */,
 				7F89A2B42710E64D0039828B /* RootView.swift in Sources */,
 				AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */,
