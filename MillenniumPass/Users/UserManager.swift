@@ -13,6 +13,27 @@ final class UserManager: ObservableObject {
     static let shared: UserManager = .init()
 
     @Published
-    var loggedInUser: User?
+    var user: User?
 
+    @Published
+    var isLoggedIn: Bool = false
+
+    init() {
+        NFCReader.shared.delegate = self
+    }
+
+}
+
+extension UserManager: NFCReaderDelegate {
+
+    func stateChange(_ state: NFCReader.LoggedInState) {
+        switch state {
+        case .idle:
+            isLoggedIn = false
+        case .loggedIn:
+            isLoggedIn = true
+        case .unauthorized:
+            isLoggedIn = false
+        }
+    }
 }

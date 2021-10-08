@@ -10,18 +10,28 @@ import SwiftUI
 struct MainContentView: View {
     
     let item: Item
+
+    @StateObject
+    var userManager: UserManager = .shared
     
     var body: some View {
         ScrollView {
             VStack {
                 
-                let name = UserManager.shared.loggedInUser?.name ?? "Szymon"
-                let surname = UserManager.shared.loggedInUser?.surname ?? "Szysz"
-                let image = UserManager.shared.loggedInUser?.uiImage
+                let name = UserManager.shared.user?.name ?? "Szymon"
+                let surname = UserManager.shared.user?.surname ?? "Szysz"
+                let image = UserManager.shared.user?.uiImage
                 
                 CardView(item: .init(
                     name: name + " " + surname,
-                    uiImage: image))
+                    uiImage: image)
+                )
+                .onTapGesture {
+                    NFCReader.shared.startReading()
+                }
+
+                LoggedInView(userManager: userManager)
+
                 NewsList(item: item.newsListItem)
             }
         }
@@ -42,3 +52,16 @@ extension MainContentView {
     }
 }
 
+struct LoggedInView: View {
+
+    @StateObject
+    var userManager: UserManager = .shared
+
+    var body: some View {
+        if userManager.isLoggedIn {
+            Text("Logged In")
+        } else {
+            EmptyView()
+        }
+    }
+}
