@@ -17,6 +17,7 @@
 		160BA6C8271088620075C30B /* NewsListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6C7271088620075C30B /* NewsListRow.swift */; };
 		160BA6CC27108B0B0075C30B /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6CB27108B0B0075C30B /* NewsList.swift */; };
 		160BA6D0271091750075C30B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6CF271091750075C30B /* Colors.swift */; };
+		160BA6DE2710993B0075C30B /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6DD2710993B0075C30B /* TimeView.swift */; };
 		7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46827107A2200188E3F /* AppDelegate.swift */; };
 		7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46A27107A2200188E3F /* SceneDelegate.swift */; };
 		7F82A46D27107A2200188E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46C27107A2200188E3F /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 		160BA6C7271088620075C30B /* NewsListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRow.swift; sourceTree = "<group>"; };
 		160BA6CB27108B0B0075C30B /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
 		160BA6CF271091750075C30B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		160BA6DD2710993B0075C30B /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		7F82A46527107A2200188E3F /* MillenniumPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillenniumPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82A46827107A2200188E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F82A46A27107A2200188E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		160BA6C22710858E0075C30B /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				160BA6DC2710992F0075C30B /* TimeView */,
 				160BA6C6271088390075C30B /* News */,
 				160BA6C3271085B60075C30B /* MainContentView.swift */,
 			);
@@ -111,6 +114,14 @@
 				160BA6CB27108B0B0075C30B /* NewsList.swift */,
 			);
 			path = News;
+			sourceTree = "<group>";
+		};
+		160BA6DC2710992F0075C30B /* TimeView */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6DD2710993B0075C30B /* TimeView.swift */,
+			);
+			path = TimeView;
 			sourceTree = "<group>";
 		};
 		7F82A45C27107A2200188E3F = {
@@ -224,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				160BA6BB2710826A0075C30B /* View+Ext.swift in Sources */,
+				160BA6DE2710993B0075C30B /* TimeView.swift in Sources */,
 				160BA6CC27108B0B0075C30B /* NewsList.swift in Sources */,
 				160BA6BF271082A50075C30B /* SpinnerView.swift in Sources */,
 				7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */,

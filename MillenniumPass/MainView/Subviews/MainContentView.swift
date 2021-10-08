@@ -14,33 +14,15 @@ struct MainContentView: View {
     var body: some View {
         ScrollView {
             VStack {
-                
                 Image(item.cardImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                NewsList(items: NewsList.mockItems)
+                TimeView(item: TimeView.mock)
                 
-//                Text(item.title)
-//                    .font(.largeTitle)
-//                    .multilineTextAlignment(.center)
-//
-//                Divider()
-//
-//                HStack {
-//                    Text(item.releasedAt)
-//                    Text(item.language)
-//                }
-//                .font(.subheadline)
-//
-//                Divider()
-//
-//                item.overview.map {
-//                    Text($0).font(.body)
-//                }
+                NewsList(items: NewsList.mockItems)
             }
         }
-//        .background(Color.backgroudColor)
         .padding(.horizontal, 10)
     }
 }

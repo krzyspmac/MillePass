@@ -19,14 +19,14 @@ struct NewsListRow: View {
             VStack(alignment: .leading) {
                 Text(item.title)
                     .font(.system(.headline, design: .rounded))
+                    .foregroundColor(Color(UIColor.systemPink))
                 Text(item.subTitle)
                     .font(.system(.caption, design: .rounded))
-                    .foregroundColor(.pink)
+                    .foregroundColor(Color(UIColor.systemGray))
             }
             Spacer()
             Image(systemName: "chevron.right")
                 .aspectRatio(contentMode: .fit)
-//                .padding(.trailing, 0)
         }
         .padding(.horizontal, 10)
     }
