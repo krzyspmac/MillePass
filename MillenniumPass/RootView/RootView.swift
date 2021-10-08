@@ -17,6 +17,8 @@ struct RootView: View {
             WelcomeScreen()
         case .sms:
             TextMessageView()
+        case .main:
+            MainView(viewModel: MainViewModel(state: .idle))
         }
     }
 }

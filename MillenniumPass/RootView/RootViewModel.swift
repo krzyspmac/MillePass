@@ -11,10 +11,19 @@ import Combine
 
 final class RootViewModel: ObservableObject {
 
+    static let shared: RootViewModel = .init()
+
     enum State {
         case welcome
         case sms
+        case main
     }
 
     @Published var state: State = .welcome
+
+    init() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.state = .sms
+        }
+    }
 }
