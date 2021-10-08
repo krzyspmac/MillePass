@@ -38,11 +38,11 @@ final class MainViewModel: ViewModel {
     private func onViewDidAppear() {
         state = .idle
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.state = .loading
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.state = .loaded(item: MockFactory.Views.Main.mainContentViewItem)
         }
     }
