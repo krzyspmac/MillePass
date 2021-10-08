@@ -14,7 +14,7 @@ struct MilleLoaderView: View {
     var body: some View {
         ZStack {
             
-            Image("mille_icon")
+            Image("mille_icon-colorful")
                 .resizable()
                 .frame(width: 60, height: 60)
             

@@ -37,7 +37,7 @@ extension NewsListRow {
         let id: String
         let title: String
         let subTitle: String
-        var milleIcon: String { "mille_icon" }
+        var milleIcon: String { "mille_icon-colorful" }
         
         static func == (lhs: Item, rhs: Item) -> Bool {
             return lhs.id == rhs.id
