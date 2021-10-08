@@ -15,15 +15,12 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.backgroudColor.edgesIgnoringSafeArea(.all)
                 content
-                    .padding(.horizontal, 10)
                     .navigationBarTitle(viewModel.state.navigationBarTitle)
             }
         }
-        .onLoad(isDebug: false, perform: { viewModel.add(.onAppear) })
-        .background(Color.backgroudColor)
-
+        .onLoad(isDebug: false, perform: { viewModel.add(.onAppear)})
+        
     }
     
     private var content: some View {
@@ -41,6 +38,7 @@ struct MainView: View {
     
     private func mainView(with item: MainContentView.Item) -> some View {
         return MainContentView(item: item)
+            .padding(.horizontal, 10)
     }
 }
 
