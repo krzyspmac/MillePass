@@ -43,7 +43,7 @@ final class NFCReader: NSObject {
 
     enum LoggedInState {
         case idle
-        case loggedIn(_ userID: String)
+        case loggedIn(_ user: User)
         case unauthorized
     }
 
@@ -82,15 +82,8 @@ final class NFCReader: NSObject {
         guard let session = session
         else { fatalError("No active session!") }
 
-//        guard case let .iso7816(iso7816Tag) = tag else {
-//            delegate?.idReaderDidDetectTag(idReader: self, result: .failure(.invalidTagType(tag)))
-//            return
-//        }
-
-
         session.connect(to: tag) { error in
             if error != nil {
-//                self.invalidateSession(error: TagReadingError.couldNotConnectToTag(iso7816Tag))
                 return
             }
 
@@ -126,14 +119,20 @@ final class NFCReader: NSObject {
                     fatalError()
                     break
                 case .signIn:
-                    completion(.loggedIn("asd"))
+                    let userId: UInt8? = data.count >= 3 ? data[2] : nil
+                    print("userId = \(String(describing: userId))")
+                    if let userId = userId, let user = User.fromIdentifier(userId) {
+                        print("user = \(user)")
+                        completion(.loggedIn(user))
+                    } else {
+                        completion(.unauthorized)
+                    }
                 case .unauthorized:
                     completion(.unauthorized)
                 }
             }
         }
     }
-
 
     private func invalidateSession(error: TagReadingError? = nil) {
         session?.invalidate(errorMessage: error?.description ?? "")
@@ -149,23 +148,15 @@ extension NFCReader: NFCTagReaderSessionDelegate {
 
     func tagReaderSession(_ session: NFCTagReaderSession, didInvalidateWithError error: Error) {
         print("NFCIDReader::tagReaderSession:session:didInvalidateWithError")
-
-//        delegate?.idReaderDidDetectTag(idReader: self, result: .failure(.sessionInvalidate(error)))
     }
 
     func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
         print("NFCIDReader::tagReaderSession:session:didDetect")
 
         guard tags.count == 1 else {
-//            delegate?.idReaderDidDetectTag(idReader: self, result: .failure(.tooManyTagsFound(tags)))
             return
         }
         guard let firstTag = tags.first else {
-//            delegate?.idReaderDidDetectTag(idReader: self, result: .failure(.noTagFound))
-            return
-        }
-        guard case let .iso7816(iso7816Tag) = firstTag else {
-//            delegate?.idReaderDidDetectTag(idReader: self, result: .failure(.invalidTagType(firstTag)))
             return
         }
 
