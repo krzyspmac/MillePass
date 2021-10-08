@@ -7,27 +7,12 @@
 
 import Foundation
 import CoreNFC
+import UIKit
 
 private let electronicPassportAID = "A0000002471001"
 
-enum LoggedInState {
-    case idle
-    case loggedIn(_ userID: String)
-    case unauthorized
-}
-
-/*
- unauth
- 0x45,
- 0x12
-
- logged in
- 0xAA
- 0xAF
- */
-
-protocol NFCReaderDelegate {
-    func stateChange(_ state: LoggedInState)
+protocol NFCReaderDelegate: AnyObject {
+    func stateChange(_ state: NFCReader.LoggedInState)
 }
 
 final class NFCReader: NSObject {
@@ -35,11 +20,15 @@ final class NFCReader: NSObject {
     static let shared: NFCReader = .init()
 
     private var session: NFCTagReaderSession?
-    private(set) var tagInfo: TagInfo?
+    private var tagInfo: TagInfo?
+    weak var delegate: NFCReaderDelegate?
+    private(set) var state: LoggedInState = .idle {
+        didSet {
+            delegate?.stateChange(state)
+        }
+    }
 
-    private(set) var state: LoggedInState = .idle
-
-    struct TagInfo {
+    private struct TagInfo {
         let tag: NFCTag
 
         var iso7816Tag: NFCISO7816Tag? {
@@ -50,6 +39,12 @@ final class NFCReader: NSObject {
                     return nil
             }
         }
+    }
+
+    enum LoggedInState {
+        case idle
+        case loggedIn(_ userID: String)
+        case unauthorized
     }
 
     enum TagReadingError: Swift.Error {
@@ -63,8 +58,10 @@ final class NFCReader: NSObject {
         case end
     }
 
-    enum CommandType: UInt8 {
-        case signIn = 0xAA
+    enum CommandType {
+        case performAuth
+        case signIn
+        case unauthorized
     }
 
     func startReading() {
@@ -90,42 +87,50 @@ final class NFCReader: NSObject {
 //            return
 //        }
 
+
         session.connect(to: tag) { error in
             if error != nil {
 //                self.invalidateSession(error: TagReadingError.couldNotConnectToTag(iso7816Tag))
                 return
             }
 
+            let userIdentifier = UIDevice.current.identifierForVendor!.uuidString
+
             self.tagInfo = TagInfo(tag: tag)
-            self.sendData(1) { data, p1, p2, error in
-                if let error = error {
-                    self.endReading()
-                } else {
-                    self.endReading()
-                }
+            self.sendAuthorization(with: userIdentifier) { state in
+                self.state = state ?? .idle
+                self.endReading()
             }
-//            self.delegate?.idReaderDidConnect(to: tag)
         }
     }
 
-    private func sendData(_ userIdentifier: UInt8, completion: @escaping (Data, UInt8, UInt8, Error?) -> Void) {
+    private func sendAuthorization(with userIdentifier: String, completion: @escaping (_ state: LoggedInState?) -> Void) {
         guard let tagInfo = tagInfo,
               let iso7816Tag = tagInfo.iso7816Tag
         else { fatalError("No tag stored!") }
 
-        let apdu = NFCISO7816APDU(instructionClass: 0xAA, instructionCode: 0xAA, p1Parameter: userIdentifier, p2Parameter: 0, data: Data(), expectedResponseLength: 1)
+        let command = NFCReader.CommandType.performAuth
+        let userIdentifierData = userIdentifier.data(using: .ascii)!
+        let apdu = NFCISO7816APDU(instructionClass: command.bytes[0], instructionCode: command.bytes[1], p1Parameter: 0, p2Parameter: 0, data: userIdentifierData, expectedResponseLength: 1)
 
+        print("apdu.data \(apdu.data!.hexEncodedString())")
         session?.alertMessage = "Asking for priviledges…"
 
         iso7816Tag.sendCommand(apdu: apdu) { (data, p1, p2, error) in
             guard error == nil else { fatalError() }
 
-            var responseData = Data()
-            responseData.append(data)
-            responseData.append(p1)
-            responseData.append(p2)
-
-            completion(responseData, p1, p2, error)
+            if let commandType = data.commandType {
+                switch commandType {
+                case .performAuth:
+                    // should not happen!
+                    fatalError()
+                    break
+                case .signIn:
+                    completion(.loggedIn("asd"))
+                case .unauthorized:
+                    completion(.unauthorized)
+                }
+            }
         }
     }
 
@@ -165,13 +170,6 @@ extension NFCReader: NFCTagReaderSessionDelegate {
         }
 
         connectToTag(firstTag)
-
-//        guard iso7816Tag.initialSelectedAID == electronicPassportAID else {
-//            delegate?.idReaderDidDetectTag(idReader: self, result: .failure(.invalidAID(iso7816Tag)))
-//            return
-//        }
-
-//        delegate?.idReaderDidDetectTag(idReader: self, result: .success(TagInfo(tag: firstTag)))
     }
 }
 
@@ -195,6 +193,81 @@ fileprivate extension NFCReader.TagReadingError {
                 return "sessionInvalidate"
             case .end:
                 return "end"
+        }
+    }
+}
+
+fileprivate extension NFCReader.CommandType {
+
+    var bytes: [UInt8] {
+        switch self {
+        case .performAuth:
+            return [0xAA, 0xAA]
+        case .signIn:
+            return [0xAA, 0xAF]
+        case .unauthorized:
+            return [0x45, 0x12]
+        }
+    }
+}
+
+func == (left: [UInt8], right: [UInt8]) -> Bool {
+    guard left.count == right.count else { return false }
+
+    for i in 0..<min(left.count, right.count) {
+        if left[i] != right[i] {
+            return false
+        }
+    }
+
+    return true
+}
+
+fileprivate extension Data {
+
+    var commandPair: [UInt8] {
+        [self[0], self[1]]
+    }
+
+    var commandType: NFCReader.CommandType? {
+        if commandPair == NFCReader.CommandType.signIn.bytes {
+            return NFCReader.CommandType.signIn
+        } else if commandPair == NFCReader.CommandType.unauthorized.bytes {
+            return NFCReader.CommandType.unauthorized
+        } else {
+            return nil
+        }
+    }
+}
+
+extension Data {
+    struct HexEncodingOptions: OptionSet {
+        let rawValue: Int
+        static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
+    }
+
+    func hexEncodedString(options: HexEncodingOptions = []) -> String {
+        let hexDigits = options.contains(.upperCase) ? "0123456789ABCDEF" : "0123456789abcdef"
+        if #available(macOS 11.0, iOS 14.0, watchOS 7.0, tvOS 14.0, *) {
+            let utf8Digits = Array(hexDigits.utf8)
+            return String(unsafeUninitializedCapacity: 2 * self.count) { (ptr) -> Int in
+                var p = ptr.baseAddress!
+                for byte in self {
+                    p[0] = utf8Digits[Int(byte / 16)]
+                    p[1] = utf8Digits[Int(byte % 16)]
+                    p += 2
+                }
+                return 2 * self.count
+            }
+        } else {
+            let utf16Digits = Array(hexDigits.utf16)
+            var chars: [unichar] = []
+            chars.reserveCapacity(2 * self.count)
+            for byte in self {
+                chars.append(utf16Digits[Int(byte / 16)])
+                chars.append(utf16Digits[Int(byte % 16)])
+            }
+            return String(utf16CodeUnits: chars, count: chars.count)
         }
     }
 }

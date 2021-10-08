@@ -50,6 +50,7 @@
 		168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewModel.swift; sourceTree = "<group>"; };
 		168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewState.swift; sourceTree = "<group>"; };
 		7F36EC262710B97600C38488 /* NFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
+		7F5C48832710CAFB005702C0 /* MillenniumPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MillenniumPass.entitlements; sourceTree = "<group>"; };
 		7F82A46527107A2200188E3F /* MillenniumPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillenniumPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82A46827107A2200188E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F82A46A27107A2200188E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				7F5C48832710CAFB005702C0 /* MillenniumPass.entitlements */,
 				7F36EC252710B97600C38488 /* NFC */,
 				160BA6AA271080250075C30B /* Utils */,
 				168C3A072710AC77002ABD73 /* TimeSheet */,
@@ -458,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MillenniumPass/MillenniumPass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MillenniumPass/Preview Content\"";
 				DEVELOPMENT_TEAM = 75FQAVWUP3;
@@ -480,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MillenniumPass/MillenniumPass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MillenniumPass/Preview Content\"";
 				DEVELOPMENT_TEAM = 75FQAVWUP3;
