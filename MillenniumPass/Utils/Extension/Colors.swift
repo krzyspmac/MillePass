@@ -38,4 +38,5 @@ extension Color {
 extension Color {
     static var separator: Color { Color(hex: "D1D1D6") }
     static var backgroudColor: Color { Color(hex: "F2F2F7") }
+    static var magenta: Color { Color(hex: "BD004F") }
 }
