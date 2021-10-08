@@ -15,7 +15,7 @@ extension MainView {
     enum State: StateBase {
         case idle
         case loading
-        case loaded(item: MainView.Item)
+        case loaded(item: MainContentView.Item)
         case error(error: Error)
         var navigationBarTitle: String { "Millennium Pass" }
     }

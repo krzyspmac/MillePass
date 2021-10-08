@@ -18,9 +18,9 @@ struct MainContentView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                TimeView(item: TimeView.mock)
+                TimeView(item: item.timeViewItem)
                 
-                NewsList(items: NewsList.mockItems)
+                NewsList(item: item.newsListItem)
             }
         }
     }
@@ -28,14 +28,15 @@ struct MainContentView: View {
 
 struct MainContentView_Previews: PreviewProvider {
     static var previews: some View {
-        return MainContentView(item: .init())
+        return MainContentView(item: MockFactory.Views.Main.mainContentViewItem)
     }
 }
 
 extension MainContentView {
     struct Item: Equatable {
         var cardImage: String { "mille_card" }
-        
+        let timeViewItem: TimeView.Item
+        let newsListItem: NewsList.Item
     }
 }
 

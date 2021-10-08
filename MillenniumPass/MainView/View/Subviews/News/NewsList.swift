@@ -9,17 +9,17 @@ import SwiftUI
 
 struct NewsList: View {
     
-    let items: [NewsListRow.Item]
+    let item: NewsList.Item
     
     var body: some View {
         VStack {
             Color.clear.frame(height: 20)
-            ForEach(Array(items.enumerated()), id: \.offset) { index, item in
+            ForEach(Array(item.rows.enumerated()), id: \.offset) { index, rowItem in
                 NavigationLink(
                     destination: TimeSheetView(viewModel: .init(state: .idle)),
-                    label: { NewsListRow(item: item) }
+                    label: { NewsListRow(item: rowItem) }
                 )
-                if index != items.count - 1 {
+                if index != item.rows.count - 1 {
                     Color.separator.frame(height: 1).padding(.horizontal, 10)
                 }
             }
@@ -32,14 +32,17 @@ struct NewsList: View {
 
 struct NewsList_Previews: PreviewProvider {
     static var previews: some View {
-        return NewsList(items: NewsList.mockItems)
+        return NewsList(item: MockFactory.Views.Main.newsListItem)
             .previewLayout(.fixed(width: 300, height: 300))
             .background(Color.backgroudColor)
     }
-    
 }
 
 extension NewsList {
+    
+    struct Item: Equatable {
+        var rows: [NewsListRow.Item]
+    }
     
     static var mockItems: [NewsListRow.Item] {
         [

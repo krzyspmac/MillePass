@@ -37,8 +37,8 @@ struct MainView: View {
         }
     }
     
-    private func mainView(with item: MainView.Item) -> some View {
-        return MainContentView(item: .init())
+    private func mainView(with item: MainContentView.Item) -> some View {
+        return MainContentView(item: item)
     }
 }
 
@@ -48,12 +48,5 @@ struct MainView_Previews: PreviewProvider {
             state: .idle
         )
         return MainView(viewModel: viewModel)
-    }
-}
-
-
-extension MainView {
-    struct Item: Equatable {
-        
     }
 }

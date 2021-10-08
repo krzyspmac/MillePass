@@ -37,14 +37,14 @@ struct TimeSheetView: View {
     }
     
     private func mainView(with item: TimeSheetView.Item) -> some View {
-        return TimeSheetListView(items: TimeSheetListView.mockItems)
+        return TimeSheetListView(item: item.timeSheetItem)
     }
 }
 
 struct TimeSheetView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = TimeSheetViewModel(
-            state: .loaded(item: .init())
+            state: .loaded(item: MockFactory.Views.TimeSheet.timeSheetViewItem)
         )
         return TimeSheetView(viewModel: viewModel)
     }
@@ -52,6 +52,6 @@ struct TimeSheetView_Previews: PreviewProvider {
 
 extension TimeSheetView {
     struct Item: Equatable {
-        
+        let timeSheetItem: TimeSheetListView.Item
     }
 }

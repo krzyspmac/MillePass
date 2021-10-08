@@ -23,6 +23,7 @@
 		168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A082710AC91002ABD73 /* TimeSheetView.swift */; };
 		168C3A0F2710AD4B002ABD73 /* TimeSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */; };
 		168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */; };
+		168C3A142710B6BA002ABD73 /* MockFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A132710B6BA002ABD73 /* MockFactory.swift */; };
 		7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46827107A2200188E3F /* AppDelegate.swift */; };
 		7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46A27107A2200188E3F /* SceneDelegate.swift */; };
 		7F82A46D27107A2200188E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46C27107A2200188E3F /* ContentView.swift */; };
@@ -48,6 +49,7 @@
 		168C3A082710AC91002ABD73 /* TimeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetView.swift; sourceTree = "<group>"; };
 		168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewModel.swift; sourceTree = "<group>"; };
 		168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewState.swift; sourceTree = "<group>"; };
+		168C3A132710B6BA002ABD73 /* MockFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFactory.swift; sourceTree = "<group>"; };
 		7F82A46527107A2200188E3F /* MillenniumPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillenniumPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82A46827107A2200188E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F82A46A27107A2200188E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +180,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		168C3A122710B6AE002ABD73 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A132710B6BA002ABD73 /* MockFactory.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		7F82A45C27107A2200188E3F = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +207,7 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				168C3A122710B6AE002ABD73 /* Mock */,
 				160BA6AA271080250075C30B /* Utils */,
 				168C3A072710AC77002ABD73 /* TimeSheet */,
 				160BA6A927107FFA0075C30B /* MainView */,
@@ -303,6 +314,7 @@
 				168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */,
 				168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */,
 				160BA6D0271091750075C30B /* Colors.swift in Sources */,
+				168C3A142710B6BA002ABD73 /* MockFactory.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
 				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
 				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
