@@ -14,10 +14,13 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            content
-                .navigationBarTitle(viewModel.state.navigationBarTitle)
+            ZStack {
+                Color.backgroudColor.edgesIgnoringSafeArea(.all)
+                content
+                    .navigationBarTitle(viewModel.state.navigationBarTitle)
+            }
         }
-        .onLoad(isDebug: true, perform: { viewModel.add(.onAppear) })
+        .onLoad(isDebug: false, perform: { viewModel.add(.onAppear) })
     }
     
     private var content: some View {
@@ -34,7 +37,7 @@ struct MainView: View {
     }
     
     private func mainView(with item: MainView.Item) -> some View {
-        return Color.yellow.asAnyView
+        return MainContentView(item: .init())
     }
 }
 
