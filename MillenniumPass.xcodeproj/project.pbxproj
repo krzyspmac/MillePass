@@ -38,6 +38,7 @@
 		7F82A46F27107A2300188E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A46E27107A2300188E3F /* Assets.xcassets */; };
 		7F82A47227107A2300188E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47127107A2300188E3F /* Preview Assets.xcassets */; };
 		7F82A47527107A2300188E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47327107A2300188E3F /* LaunchScreen.storyboard */; };
+		AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60E9D62710E028001BC52D /* TextMessageView.swift */; };
 		ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		7F82A47127107A2300188E3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F82A47427107A2300188E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F82A47627107A2300188E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD60E9D62710E028001BC52D /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
 		ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -255,6 +257,7 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				AD60E9D82710E172001BC52D /* Text Message */,
 				7F09232F2710DE5A00E58098 /* NFC */,
 				7F09232E2710DE4F00E58098 /* MillenniumPass.entitlements */,
 				168C3A172710D339002ABD73 /* MilleStarts */,
@@ -281,6 +284,14 @@
 				7F82A47127107A2300188E3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD60E9D82710E172001BC52D /* Text Message */ = {
+			isa = PBXGroup;
+			children = (
+				AD60E9D62710E028001BC52D /* TextMessageView.swift */,
+			);
+			path = "Text Message";
 			sourceTree = "<group>";
 		};
 		ADD559852710DA5600CBCB52 /* WelcomeScreen */ = {
@@ -393,6 +404,7 @@
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
 				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
 				168C3A1B2710D35B002ABD73 /* MilleStartsViewState.swift in Sources */,
+				AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */,
 				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
 				ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */,
 				168C3A162710D0F7002ABD73 /* MilleLoaderView.swift in Sources */,
