@@ -31,6 +31,7 @@
 		7F82A46F27107A2300188E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A46E27107A2300188E3F /* Assets.xcassets */; };
 		7F82A47227107A2300188E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47127107A2300188E3F /* Preview Assets.xcassets */; };
 		7F82A47527107A2300188E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47327107A2300188E3F /* LaunchScreen.storyboard */; };
+		ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		7F82A47127107A2300188E3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F82A47427107A2300188E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F82A47627107A2300188E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				ADD559852710DA5600CBCB52 /* WelcomeScreen */,
 				168C3A122710B6AE002ABD73 /* Mock */,
 				160BA6AA271080250075C30B /* Utils */,
 				168C3A072710AC77002ABD73 /* TimeSheet */,
@@ -231,6 +234,22 @@
 				7F82A47127107A2300188E3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ADD559852710DA5600CBCB52 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ADD559862710DA6000CBCB52 /* View */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		ADD559862710DA6000CBCB52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +340,7 @@
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
 				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
 				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
+				ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */,
 				168C3A162710D0F7002ABD73 /* MilleLoaderView.swift in Sources */,
 				160BA6B3271081100075C30B /* MainViewModel.swift in Sources */,
 				160BA6C4271085B60075C30B /* MainContentView.swift in Sources */,
