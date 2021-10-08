@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Combine
 
-final class UserManager {
+final class UserManager: ObservableObject {
 
     static let shared: UserManager = .init()
 
+    @Published
     var loggedInUser: User?
 
 }
