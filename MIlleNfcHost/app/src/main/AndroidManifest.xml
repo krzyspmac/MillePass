@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:tools="http://schemas.android.com/tools"
+  package="pl.mille.millenfchost"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <uses-permission android:name="android.permission.NFC" />
+
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.MIlleNfcHost">
+
+    <activity
+      android:name=".MainActivity"
+      android:exported="true">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+
+    <service
+      android:name=".MyNfcService"
+      android:exported="true"
+      android:permission="android.permission.BIND_NFC_SERVICE"
+      android:enabled="true"
+      >
+      <intent-filter>
+        <action android:name="android.nfc.cardemulation.action.HOST_APDU_SERVICE" />
+      </intent-filter>
+
+      <meta-data
+        android:name="android.nfc.cardemulation.host_apdu_service"
+        android:resource="@xml/apduservice" />
+    </service>
+  </application>
+
+</manifest>

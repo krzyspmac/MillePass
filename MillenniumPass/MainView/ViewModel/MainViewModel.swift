@@ -38,7 +38,7 @@ final class MainViewModel: ViewModel {
     private func onViewDidAppear() {
         state = .loading
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.state = .loaded(item: .init())
         }
     }

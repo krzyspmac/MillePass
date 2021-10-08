@@ -13,7 +13,17 @@
 		160BA6B6271081540075C30B /* MainViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6B5271081540075C30B /* MainViewState.swift */; };
 		160BA6BB2710826A0075C30B /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6BA2710826A0075C30B /* View+Ext.swift */; };
 		160BA6BF271082A50075C30B /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6BE271082A50075C30B /* SpinnerView.swift */; };
-		7F5A4EA9271086E7004E0EE8 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A4EA8271086E7004E0EE8 /* NFCReader.swift */; };
+		160BA6C4271085B60075C30B /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6C3271085B60075C30B /* MainContentView.swift */; };
+		160BA6C8271088620075C30B /* NewsListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6C7271088620075C30B /* NewsListRow.swift */; };
+		160BA6CC27108B0B0075C30B /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6CB27108B0B0075C30B /* NewsList.swift */; };
+		160BA6D0271091750075C30B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6CF271091750075C30B /* Colors.swift */; };
+		160BA6DE2710993B0075C30B /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6DD2710993B0075C30B /* TimeView.swift */; };
+		168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A032710A872002ABD73 /* TimeSheetRowView.swift */; };
+		168C3A062710AB0B002ABD73 /* TimeSheetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A052710AB0B002ABD73 /* TimeSheetListView.swift */; };
+		168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A082710AC91002ABD73 /* TimeSheetView.swift */; };
+		168C3A0F2710AD4B002ABD73 /* TimeSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */; };
+		168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */; };
+		7F36EC272710B97600C38488 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36EC262710B97600C38488 /* NFCReader.swift */; };
 		7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46827107A2200188E3F /* AppDelegate.swift */; };
 		7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46A27107A2200188E3F /* SceneDelegate.swift */; };
 		7F82A46D27107A2200188E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46C27107A2200188E3F /* ContentView.swift */; };
@@ -29,8 +39,17 @@
 		160BA6B5271081540075C30B /* MainViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewState.swift; sourceTree = "<group>"; };
 		160BA6BA2710826A0075C30B /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		160BA6BE271082A50075C30B /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
-		7F5A4EA8271086E7004E0EE8 /* NFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
-		7F5A4EAC27108795004E0EE8 /* MillenniumPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MillenniumPass.entitlements; sourceTree = "<group>"; };
+		160BA6C3271085B60075C30B /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		160BA6C7271088620075C30B /* NewsListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRow.swift; sourceTree = "<group>"; };
+		160BA6CB27108B0B0075C30B /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
+		160BA6CF271091750075C30B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		160BA6DD2710993B0075C30B /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		168C3A032710A872002ABD73 /* TimeSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetRowView.swift; sourceTree = "<group>"; };
+		168C3A052710AB0B002ABD73 /* TimeSheetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetListView.swift; sourceTree = "<group>"; };
+		168C3A082710AC91002ABD73 /* TimeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetView.swift; sourceTree = "<group>"; };
+		168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewModel.swift; sourceTree = "<group>"; };
+		168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewState.swift; sourceTree = "<group>"; };
+		7F36EC262710B97600C38488 /* NFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		7F82A46527107A2200188E3F /* MillenniumPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillenniumPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82A46827107A2200188E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F82A46A27107A2200188E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,9 +74,8 @@
 		160BA6A927107FFA0075C30B /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				160BA6AF271080E30075C30B /* MainView.swift */,
-				160BA6B2271081100075C30B /* MainViewModel.swift */,
-				160BA6B5271081540075C30B /* MainViewState.swift */,
+				168C3A0D2710AD29002ABD73 /* ViewModel */,
+				168C3A0C2710AD22002ABD73 /* View */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -76,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				160BA6BA2710826A0075C30B /* View+Ext.swift */,
+				160BA6CF271091750075C30B /* Colors.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -88,10 +107,83 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
-		7F5A4EA7271086E7004E0EE8 /* NFC */ = {
+		160BA6C22710858E0075C30B /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
-				7F5A4EA8271086E7004E0EE8 /* NFCReader.swift */,
+				160BA6DC2710992F0075C30B /* TimeView */,
+				160BA6C6271088390075C30B /* News */,
+				160BA6C3271085B60075C30B /* MainContentView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		160BA6C6271088390075C30B /* News */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6C7271088620075C30B /* NewsListRow.swift */,
+				160BA6CB27108B0B0075C30B /* NewsList.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		160BA6DC2710992F0075C30B /* TimeView */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6DD2710993B0075C30B /* TimeView.swift */,
+			);
+			path = TimeView;
+			sourceTree = "<group>";
+		};
+		168C3A072710AC77002ABD73 /* TimeSheet */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A0B2710ACEE002ABD73 /* ViewModel */,
+				168C3A0A2710ACDC002ABD73 /* View */,
+			);
+			path = TimeSheet;
+			sourceTree = "<group>";
+		};
+		168C3A0A2710ACDC002ABD73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A032710A872002ABD73 /* TimeSheetRowView.swift */,
+				168C3A052710AB0B002ABD73 /* TimeSheetListView.swift */,
+				168C3A082710AC91002ABD73 /* TimeSheetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		168C3A0B2710ACEE002ABD73 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */,
+				168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		168C3A0C2710AD22002ABD73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6C22710858E0075C30B /* Subviews */,
+				160BA6AF271080E30075C30B /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		168C3A0D2710AD29002ABD73 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6B2271081100075C30B /* MainViewModel.swift */,
+				160BA6B5271081540075C30B /* MainViewState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7F36EC252710B97600C38488 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				7F36EC262710B97600C38488 /* NFCReader.swift */,
 			);
 			path = NFC;
 			sourceTree = "<group>";
@@ -115,9 +207,9 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
-				7F5A4EAC27108795004E0EE8 /* MillenniumPass.entitlements */,
-				7F5A4EA7271086E7004E0EE8 /* NFC */,
+				7F36EC252710B97600C38488 /* NFC */,
 				160BA6AA271080250075C30B /* Utils */,
+				168C3A072710AC77002ABD73 /* TimeSheet */,
 				160BA6A927107FFA0075C30B /* MainView */,
 				7F82A46827107A2200188E3F /* AppDelegate.swift */,
 				7F82A46A27107A2200188E3F /* SceneDelegate.swift */,
@@ -209,15 +301,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				160BA6BB2710826A0075C30B /* View+Ext.swift in Sources */,
+				168C3A062710AB0B002ABD73 /* TimeSheetListView.swift in Sources */,
+				160BA6DE2710993B0075C30B /* TimeView.swift in Sources */,
+				160BA6CC27108B0B0075C30B /* NewsList.swift in Sources */,
 				160BA6BF271082A50075C30B /* SpinnerView.swift in Sources */,
 				7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */,
 				160BA6B6271081540075C30B /* MainViewState.swift in Sources */,
 				7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */,
+				7F36EC272710B97600C38488 /* NFCReader.swift in Sources */,
 				160BA6AC271080460075C30B /* ViewModel.swift in Sources */,
+				168C3A0F2710AD4B002ABD73 /* TimeSheetViewModel.swift in Sources */,
 				160BA6B0271080E30075C30B /* MainView.swift in Sources */,
+				168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */,
+				168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */,
+				160BA6D0271091750075C30B /* Colors.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
-				7F5A4EA9271086E7004E0EE8 /* NFCReader.swift in Sources */,
+				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
+				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
 				160BA6B3271081100075C30B /* MainViewModel.swift in Sources */,
+				160BA6C4271085B60075C30B /* MainContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -341,7 +443,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -356,12 +458,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MillenniumPass/MillenniumPass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MillenniumPass/Preview Content\"";
 				DEVELOPMENT_TEAM = 75FQAVWUP3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MillenniumPass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,12 +480,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = MillenniumPass/MillenniumPass.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"MillenniumPass/Preview Content\"";
 				DEVELOPMENT_TEAM = 75FQAVWUP3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MillenniumPass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
