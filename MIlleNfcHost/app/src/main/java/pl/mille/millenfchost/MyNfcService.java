@@ -27,7 +27,7 @@ public class MyNfcService extends HostApduService {
 
   private static final String TAG = "NFCLOL";
 
-  private UserDatabase userDatabase = new UserDatabase();
+  private ValidUserIds validUserIds = new ValidUserIds();
 
   //
   // We use the default AID from the HCE Android documentation
@@ -270,17 +270,15 @@ public class MyNfcService extends HostApduService {
 
       String userId = MyNfcService.decodeUserId(commandApdu);
 
-      User user = userDatabase.getUser(userId);
-      if (user != null) {
+      if (validUserIds.canLogIn(userId)) {
         byte[] apdu_sign_in = {
             (byte) 0xAA,  // CLA - Class Of Instruction
             (byte) 0xAF,  // Instruction
-            (byte) user.userToken,  // P1 - user identifier
+            (byte) 0x01,  // P1 - user identifier
             (byte) 0x00, // P2	- Parameter 2 - Instruction parameter 2
             (byte) 0x00  //  Le field
         };
-        apdu_sign_in[2] = user.userToken; // p1 user identifier
-        Log.i(TAG, "processCommandApdu() | user id = " + userId);
+        Log.i(TAG, "processCommandApdu() | found user! ");
         return apdu_sign_in;
       } else {
         return NOT_AUTH;
