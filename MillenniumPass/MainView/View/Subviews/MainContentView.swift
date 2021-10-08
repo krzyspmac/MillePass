@@ -29,9 +29,9 @@ struct MainContentView: View {
                         name: name + " " + surname,
                         uiImage: image)
                     )
-                        .onTapGesture {
-                            NFCReader.shared.startReading()
-                        }
+                    .onTapGesture {
+                        NFCReader.shared.startReading()
+                    }
                     
                     LoggedInView(userManager: userManager)
                     

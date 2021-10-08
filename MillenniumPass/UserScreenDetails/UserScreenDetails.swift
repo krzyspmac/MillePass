@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct UserScreenDetails: View {
+
+    var user: User
+
     var body: some View {
         VStack(alignment: .center, spacing: 20, content: {
-            Image("mille_icon-colorful")
+            Image(uiImage: user.uiImage ?? UIImage())
             
             VStack(alignment: .leading, spacing: 20, content: {
               
@@ -23,7 +26,7 @@ struct UserScreenDetails: View {
                         .font(.system(.title2, design: .rounded))
                         .bold()
                         .multilineTextAlignment(.leading)
-                    Text("Szymon Szysz")
+                    Text("\(user.name) \(user.surname)")
                         .font(.system(.title2, design: .rounded))
                         .multilineTextAlignment(.leading)
                 }
@@ -54,6 +57,7 @@ struct UserScreenDetails: View {
 
 struct UserScreenDetails_Previews: PreviewProvider {
     static var previews: some View {
-        UserScreenDetails()
+        let user = User(name: "Name", surname: "Surname", imageBase64: "")
+        UserScreenDetails(user: user)
     }
 }

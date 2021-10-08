@@ -18,9 +18,19 @@ struct MainView: View {
                 content
                     .navigationBarTitle(viewModel.state.navigationBarTitle)
             }
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        UserScreenDetails(user: UserManager.shared.user!)
+                    } label: {
+                        Text("Press me")
+                    }
+                }
+            })
         }
-        .onLoad(isDebug: false, perform: { viewModel.add(.onAppear)})
-        
+        .onAppear {
+            viewModel.add(.onAppear)
+        }        
     }
     
     private var content: some View {
