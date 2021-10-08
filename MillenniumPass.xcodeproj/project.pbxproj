@@ -37,6 +37,9 @@
 		7F82A46F27107A2300188E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A46E27107A2300188E3F /* Assets.xcassets */; };
 		7F82A47227107A2300188E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47127107A2300188E3F /* Preview Assets.xcassets */; };
 		7F82A47527107A2300188E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47327107A2300188E3F /* LaunchScreen.storyboard */; };
+		7F89A2B12710E4F70039828B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B02710E4F70039828B /* UserManager.swift */; };
+		7F89A2B42710E64D0039828B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B32710E64D0039828B /* RootView.swift */; };
+		7F89A2B62710E66F0039828B /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B52710E66F0039828B /* RootViewModel.swift */; };
 		7FB294502710E48700266FDF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2944F2710E48700266FDF /* User.swift */; };
 		AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60E9D62710E028001BC52D /* TextMessageView.swift */; };
 		ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */; };
@@ -76,6 +79,9 @@
 		7F82A47127107A2300188E3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F82A47427107A2300188E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F82A47627107A2300188E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F89A2B02710E4F70039828B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		7F89A2B32710E64D0039828B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7F89A2B52710E66F0039828B /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		7FB2944F2710E48700266FDF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AD60E9D62710E028001BC52D /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
 		ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 			children = (
 				7FB2944F2710E48700266FDF /* User.swift */,
 				7F0923352710DE7900E58098 /* 1.user.json */,
+				7F89A2B02710E4F70039828B /* UserManager.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -257,6 +264,7 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				7F89A2B22710E6430039828B /* RootView */,
 				AD60E9D82710E172001BC52D /* Text Message */,
 				7F09232F2710DE5A00E58098 /* NFC */,
 				7F09232E2710DE4F00E58098 /* MillenniumPass.entitlements */,
@@ -284,6 +292,15 @@
 				7F82A47127107A2300188E3F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7F89A2B22710E6430039828B /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				7F89A2B32710E64D0039828B /* RootView.swift */,
+				7F89A2B52710E66F0039828B /* RootViewModel.swift */,
+			);
+			path = RootView;
 			sourceTree = "<group>";
 		};
 		AD60E9D82710E172001BC52D /* Text Message */ = {
@@ -399,16 +416,19 @@
 				168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */,
 				168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */,
 				160BA6D0271091750075C30B /* Colors.swift in Sources */,
+				7F89A2B12710E4F70039828B /* UserManager.swift in Sources */,
 				168C3A142710B6BA002ABD73 /* MockFactory.swift in Sources */,
 				168C3A192710D354002ABD73 /* MilleStartsView.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
 				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
 				168C3A1B2710D35B002ABD73 /* MilleStartsViewState.swift in Sources */,
+				7F89A2B42710E64D0039828B /* RootView.swift in Sources */,
 				AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */,
 				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
 				ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */,
 				168C3A162710D0F7002ABD73 /* MilleLoaderView.swift in Sources */,
 				160BA6B3271081100075C30B /* MainViewModel.swift in Sources */,
+				7F89A2B62710E66F0039828B /* RootViewModel.swift in Sources */,
 				160BA6C4271085B60075C30B /* MainContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

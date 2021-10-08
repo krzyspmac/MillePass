@@ -27,8 +27,10 @@ struct TextMessageView: View {
                     Button("Autoryzuj".uppercased()) {
                         if smsString == "1111" {
                             print("You shall pass jeden")
+                            UserManager.shared.loggedInUser = User.fromIdentifier(1)
                         } else if smsString == "2222" {
                             print("You shall pass dwa")
+                            UserManager.shared.loggedInUser = User.fromIdentifier(2)
                         } else {
                             showingAlert = true
                         }
