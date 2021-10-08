@@ -29,7 +29,7 @@ struct MainView: View {
         case .idle:
             return Color.clear.asAnyView
         case .loading:
-            return SpinnerView(isAnimating: true, style: .large).asAnyView
+            return MilleLoaderView().asAnyView
         case .error(let error):
             return Text(error.localizedDescription).asAnyView
         case .loaded(let data):

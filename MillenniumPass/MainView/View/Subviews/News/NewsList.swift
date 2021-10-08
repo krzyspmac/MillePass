@@ -16,7 +16,7 @@ struct NewsList: View {
             Color.clear.frame(height: 20)
             ForEach(Array(item.rows.enumerated()), id: \.offset) { index, rowItem in
                 NavigationLink(
-                    destination: TimeSheetView(viewModel: .init(state: .idle)),
+                    destination: MilleStartsView(viewModel: .init(state: .idle)),
                     label: { NewsListRow(item: rowItem) }
                 )
                 if index != item.rows.count - 1 {
