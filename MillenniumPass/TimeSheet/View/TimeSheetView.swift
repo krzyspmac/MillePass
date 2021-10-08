@@ -21,7 +21,7 @@ struct TimeSheetView: View {
                 .navigationBarTitle(viewModel.state.navigationBarTitle)
             }
         }
-        .onLoad(isDebug: true, perform: { viewModel.add(.onAppear) })
+        .onLoad(isDebug: false, perform: { viewModel.add(.onAppear) })
     }
     
     private var content: some View {

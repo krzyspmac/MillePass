@@ -15,7 +15,10 @@ struct NewsList: View {
         VStack {
             Color.clear.frame(height: 20)
             ForEach(Array(items.enumerated()), id: \.offset) { index, item in
-                NewsListRow(item: item)
+                NavigationLink(
+                    destination: TimeSheetView(viewModel: .init(state: .idle)),
+                    label: { NewsListRow(item: item) }
+                )
                 if index != items.count - 1 {
                     Color.separator.frame(height: 1).padding(.horizontal, 10)
                 }
