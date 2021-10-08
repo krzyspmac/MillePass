@@ -12,14 +12,12 @@ struct TimeSheetView: View {
     @StateObject var viewModel: TimeSheetViewModel
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color.backgroudColor.edgesIgnoringSafeArea(.all)
-                ScrollView {
-                    content
-                }
-                .navigationBarTitle(viewModel.state.navigationBarTitle)
+        ZStack {
+            Color.backgroudColor.edgesIgnoringSafeArea(.all)
+            ScrollView {
+                content
             }
+            .navigationBarTitle(viewModel.state.navigationBarTitle)
         }
         .onLoad(isDebug: false, perform: { viewModel.add(.onAppear) })
     }
