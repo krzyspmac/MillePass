@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160BA6AC271080460075C30B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6AB271080460075C30B /* ViewModel.swift */; };
+		160BA6B0271080E30075C30B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6AF271080E30075C30B /* MainView.swift */; };
+		160BA6B3271081100075C30B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6B2271081100075C30B /* MainViewModel.swift */; };
+		160BA6B6271081540075C30B /* MainViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6B5271081540075C30B /* MainViewState.swift */; };
+		160BA6BB2710826A0075C30B /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6BA2710826A0075C30B /* View+Ext.swift */; };
+		160BA6BF271082A50075C30B /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6BE271082A50075C30B /* SpinnerView.swift */; };
 		7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46827107A2200188E3F /* AppDelegate.swift */; };
 		7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46A27107A2200188E3F /* SceneDelegate.swift */; };
 		7F82A46D27107A2200188E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46C27107A2200188E3F /* ContentView.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		160BA6AB271080460075C30B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		160BA6AF271080E30075C30B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		160BA6B2271081100075C30B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		160BA6B5271081540075C30B /* MainViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewState.swift; sourceTree = "<group>"; };
+		160BA6BA2710826A0075C30B /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		160BA6BE271082A50075C30B /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		7F82A46527107A2200188E3F /* MillenniumPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillenniumPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82A46827107A2200188E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F82A46A27107A2200188E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +49,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		160BA6A927107FFA0075C30B /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6AF271080E30075C30B /* MainView.swift */,
+				160BA6B2271081100075C30B /* MainViewModel.swift */,
+				160BA6B5271081540075C30B /* MainViewState.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		160BA6AA271080250075C30B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6BD2710829C0075C30B /* Controls */,
+				160BA6B9271082490075C30B /* Extension */,
+				160BA6AB271080460075C30B /* ViewModel.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		160BA6B9271082490075C30B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6BA2710826A0075C30B /* View+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		160BA6BD2710829C0075C30B /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6BE271082A50075C30B /* SpinnerView.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		7F82A45C27107A2200188E3F = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +104,8 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				160BA6AA271080250075C30B /* Utils */,
+				160BA6A927107FFA0075C30B /* MainView */,
 				7F82A46827107A2200188E3F /* AppDelegate.swift */,
 				7F82A46A27107A2200188E3F /* SceneDelegate.swift */,
 				7F82A46C27107A2200188E3F /* ContentView.swift */,
@@ -145,9 +195,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160BA6BB2710826A0075C30B /* View+Ext.swift in Sources */,
+				160BA6BF271082A50075C30B /* SpinnerView.swift in Sources */,
 				7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */,
+				160BA6B6271081540075C30B /* MainViewState.swift in Sources */,
 				7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */,
+				160BA6AC271080460075C30B /* ViewModel.swift in Sources */,
+				160BA6B0271080E30075C30B /* MainView.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
+				160BA6B3271081100075C30B /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +347,7 @@
 				DEVELOPMENT_TEAM = 75FQAVWUP3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MillenniumPass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +369,7 @@
 				DEVELOPMENT_TEAM = 75FQAVWUP3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = MillenniumPass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
