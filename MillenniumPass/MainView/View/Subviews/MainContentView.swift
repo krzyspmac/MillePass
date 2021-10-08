@@ -23,7 +23,6 @@ struct MainContentView: View {
                 NewsList(items: NewsList.mockItems)
             }
         }
-        .padding(.horizontal, 10)
     }
 }
 

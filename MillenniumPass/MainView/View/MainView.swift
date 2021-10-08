@@ -17,6 +17,7 @@ struct MainView: View {
             ZStack {
                 Color.backgroudColor.edgesIgnoringSafeArea(.all)
                 content
+                    .padding(.horizontal, 10)
                     .navigationBarTitle(viewModel.state.navigationBarTitle)
             }
         }

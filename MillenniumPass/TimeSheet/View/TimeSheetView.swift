@@ -17,6 +17,7 @@ struct TimeSheetView: View {
             ScrollView {
                 content
             }
+            .padding(.horizontal, 10)
             .navigationBarTitle(viewModel.state.navigationBarTitle)
         }
         .onLoad(isDebug: false, perform: { viewModel.add(.onAppear) })
