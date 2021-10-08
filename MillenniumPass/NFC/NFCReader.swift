@@ -12,6 +12,8 @@ private let electronicPassportAID = "A0000002471001"
 
 final class NFCReader: NSObject {
 
+    static let shared: NFCReader = .init()
+
     private var session: NFCTagReaderSession?
     private(set) var tagInfo: TagInfo?
 
