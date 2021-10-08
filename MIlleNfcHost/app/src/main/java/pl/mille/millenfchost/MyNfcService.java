@@ -116,6 +116,11 @@ public class MyNfcService extends HostApduService {
       (byte) 0x00   // SW2	Status byte 2 - Command processing qualifier
   };
 
+  private static final byte[] NOT_AUTH = {
+      (byte) 0x45,  // SW1	Status byte 1 - Command processing status
+      (byte) 0x12   // SW2	Status byte 2 - Command processing qualifier
+  };
+
   private static final byte[] NDEF_ID = {
       (byte) 0xE1,
       (byte) 0x04
@@ -191,13 +196,15 @@ public class MyNfcService extends HostApduService {
         apdu_sign_in[2] = user.userIdentifier; // p1 user identifier
 
         return apdu_sign_in;
+      } else {
+        return NOT_AUTH;
       }
     }
 
     //
     // We're doing something outside our scope
     //
-    Log.wtf(TAG, "processCommandApdu() | I don't know what's going on!!!.");
+    //Log.wtf(TAG, "processCommandApdu() | I don't know what's going on!!!.");
     return "Can I help you?".getBytes();
   }
 
