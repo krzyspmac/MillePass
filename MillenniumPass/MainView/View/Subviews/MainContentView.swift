@@ -14,10 +14,14 @@ struct MainContentView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Image(item.cardImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
                 
+                let name = UserManager.shared.loggedInUser?.name ?? "Szymon"
+                let surname = UserManager.shared.loggedInUser?.surname ?? "Szysz"
+                let image = UserManager.shared.loggedInUser?.uiImage
+                
+                CardView(item: .init(
+                    name: name + " " + surname,
+                    uiImage: image))
                 NewsList(item: item.newsListItem)
             }
         }
