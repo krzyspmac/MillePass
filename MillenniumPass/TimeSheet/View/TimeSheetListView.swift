@@ -18,14 +18,12 @@ struct TimeSheetListView: View {
             ForEach(Array(item.rows.enumerated()), id: \.offset) { index, itemRow in
 //                let itemRow = item.rows[index]
                 TimeSheetRowView(item: itemRow)
-                if index != item.rows.count - 1 {
-                    Color.separator.frame(height: 1).padding(.horizontal, 10)
-                }
+//                if index != item.rows.count - 1 {
+//                    Color.separator.frame(height: 1).padding(.horizontal, 10)
+//                }
             }
             Color.clear.frame(height: 20)
         }
-        .background(Color.white)
-        .cornerRadius(30)
     }
 }
 
