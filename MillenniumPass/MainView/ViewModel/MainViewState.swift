@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension MainView {
+extension MainViewModel {
     enum Event: EventBase {
         case onAppear
     }
@@ -21,8 +21,8 @@ extension MainView {
     }
 }
 
-extension MainView.State: Equatable {
-    static func == (lhs: MainView.State, rhs: MainView.State) -> Bool {
+extension MainViewModel.State: Equatable {
+    static func == (lhs: MainViewModel.State, rhs: MainViewModel.State) -> Bool {
         switch (lhs, rhs) {
         case (.idle, .idle): return true
         case (.loading, .loading): return true
