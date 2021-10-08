@@ -1,5 +1,5 @@
 //
-//  TimeSheetViewModel.swift
+//  MilleStartsViewModel.swift
 //  MillenniumPass
 //
 //  Created by Grzegorz Makowski on 08/10/2021.
@@ -7,20 +7,20 @@
 
 import Foundation
 
-final class TimeSheetViewModel: ViewModel {
+final class MilleStartsViewModel: ViewModel {
     
-    typealias E = TimeSheetView.Event
-    typealias S = TimeSheetView.State
+    typealias E = MilleStartsView.Event
+    typealias S = MilleStartsView.State
     
     @Published
-    var state: TimeSheetView.State
+    var state: MilleStartsView.State
     
     // MARK: - Properties
     
     
     // MARK: - Init
     
-    init(state: TimeSheetView.State = .idle) {
+    init(state: MilleStartsView.State = .idle) {
         self.state = state
     }
     
@@ -37,7 +37,7 @@ final class TimeSheetViewModel: ViewModel {
         state = .loading
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.state = .loaded(item: MockFactory.Views.TimeSheet.timeSheetViewItem)
+            self.state = .loaded(item: MockFactory.Views.MilleStart.milleStartViewItem)
         }
     }
 }

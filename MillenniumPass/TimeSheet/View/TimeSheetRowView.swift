@@ -13,6 +13,9 @@ struct TimeSheetRowView: View {
     
     var body: some View {
         HStack {
+            Color.green
+                .frame(width: 10)
+        HStack {
             VStack(alignment: .leading) {
                 HStack {
                     Image(systemName: item.timeIcon)
@@ -32,7 +35,10 @@ struct TimeSheetRowView: View {
                 .font(.system(.headline, design: .rounded))
                 .foregroundColor(Color(UIColor.systemPink))
         }
-        .padding(.horizontal, 10)
+        .padding(10)
+        }
+        .background(Color.white)
+        .cornerRadius(8)
     }
 }
 

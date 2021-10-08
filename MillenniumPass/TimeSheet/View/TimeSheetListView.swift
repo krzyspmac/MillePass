@@ -9,27 +9,22 @@ import SwiftUI
 
 struct TimeSheetListView: View {
     
-    let items: [TimeSheetRowView.Item]
+    let item: TimeSheetListView.Item
     
     var body: some View {
         VStack {
             Color.clear.frame(height: 20)
-            ForEach(Array(items.enumerated()), id: \.offset) { index, item in
-                TimeSheetRowView(item: item)
-                if index != items.count - 1 {
-                    Color.separator.frame(height: 1).padding(.horizontal, 10)
-                }
+            ForEach(Array(item.rows.enumerated()), id: \.offset) { index, itemRow in
+                TimeSheetRowView(item: itemRow)
             }
             Color.clear.frame(height: 20)
         }
-        .background(Color.white)
-        .cornerRadius(30)
     }
 }
 
 struct TimeSheetListView_Previews: PreviewProvider {
     static var previews: some View {
-        return TimeSheetListView(items: TimeSheetListView.mockItems)
+        return TimeSheetListView(item: MockFactory.Views.TimeSheet.timeSheetListItem)
             .previewLayout(.fixed(width: 300, height: 300))
             .background(Color.backgroudColor)
     }
@@ -38,20 +33,8 @@ struct TimeSheetListView_Previews: PreviewProvider {
 
 extension TimeSheetListView {
     
-    static var mockItems: [TimeSheetRowView.Item] {
-        [
-            .init(
-                id: "1",
-                title:  "Czas pracy",
-                subTitle: "08:30",
-                dateText: "10.02"
-            ),
-            .init(
-                id: "2",
-                title:  "Czas pracy",
-                subTitle: "08:30",
-                dateText: "11.02"
-            )
-        ]
+    struct Item: Equatable {
+        let rows: [TimeSheetRowView.Item]
     }
+    
 }

@@ -1,5 +1,5 @@
 //
-//  TimeSheetView.swift
+//  MilleStartsView.swift
 //  MillenniumPass
 //
 //  Created by Grzegorz Makowski on 08/10/2021.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TimeSheetView: View {
+struct MilleStartsView: View {
     
-    @StateObject var viewModel: TimeSheetViewModel
+    @StateObject var viewModel: MilleStartsViewModel
     
     var body: some View {
         ZStack {
@@ -36,22 +36,29 @@ struct TimeSheetView: View {
         }
     }
     
-    private func mainView(with item: TimeSheetView.Item) -> some View {
-        return TimeSheetListView(item: item.timeSheetItem)
+    private func mainView(with item: MilleStartsView.Item) -> some View {
+        VStack {
+            Color.clear.frame(height: 20)
+            ForEach(Array(item.rows.enumerated()), id: \.offset) { index, itemRow in
+                MilleStartsRowView(item: itemRow)
+            }
+            Color.clear.frame(height: 20)
+        }
     }
 }
 
-struct TimeSheetView_Previews: PreviewProvider {
+struct MilleStartsView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = TimeSheetViewModel(
-            state: .loaded(item: MockFactory.Views.TimeSheet.timeSheetViewItem)
+        let viewModel = MilleStartsViewModel(
+            state: .loaded(item: MockFactory.Views.MilleStart.milleStartViewItem)
         )
-        return TimeSheetView(viewModel: viewModel)
+        return MilleStartsView(viewModel: viewModel)
     }
 }
 
-extension TimeSheetView {
+extension MilleStartsView {
     struct Item: Equatable {
-        let timeSheetItem: TimeSheetListView.Item
+        let rows: [MilleStartsRowView.Item]
     }
 }
+

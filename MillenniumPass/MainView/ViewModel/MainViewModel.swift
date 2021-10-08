@@ -39,7 +39,7 @@ final class MainViewModel: ViewModel {
         state = .loading
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.state = .loaded(item: .init())
+            self.state = .loaded(item: MockFactory.Views.Main.mainContentViewItem)
         }
     }
 }
