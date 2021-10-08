@@ -12,7 +12,7 @@ struct TextMessageView: View {
     @State private var showingAlert = false
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color.white, Color(.magenta)]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [Color.white, Color(.systemPink)]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.vertical)
             .overlay(
                 VStack {

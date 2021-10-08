@@ -18,8 +18,6 @@ struct MainContentView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                TimeView(item: item.timeViewItem)
-                
                 NewsList(item: item.newsListItem)
             }
         }
