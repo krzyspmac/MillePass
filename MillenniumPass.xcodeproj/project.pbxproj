@@ -18,6 +18,11 @@
 		160BA6CC27108B0B0075C30B /* NewsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6CB27108B0B0075C30B /* NewsList.swift */; };
 		160BA6D0271091750075C30B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6CF271091750075C30B /* Colors.swift */; };
 		160BA6DE2710993B0075C30B /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160BA6DD2710993B0075C30B /* TimeView.swift */; };
+		168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A032710A872002ABD73 /* TimeSheetRowView.swift */; };
+		168C3A062710AB0B002ABD73 /* TimeSheetListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A052710AB0B002ABD73 /* TimeSheetListView.swift */; };
+		168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A082710AC91002ABD73 /* TimeSheetView.swift */; };
+		168C3A0F2710AD4B002ABD73 /* TimeSheetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */; };
+		168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */; };
 		7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46827107A2200188E3F /* AppDelegate.swift */; };
 		7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46A27107A2200188E3F /* SceneDelegate.swift */; };
 		7F82A46D27107A2200188E3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46C27107A2200188E3F /* ContentView.swift */; };
@@ -38,6 +43,11 @@
 		160BA6CB27108B0B0075C30B /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
 		160BA6CF271091750075C30B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		160BA6DD2710993B0075C30B /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		168C3A032710A872002ABD73 /* TimeSheetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetRowView.swift; sourceTree = "<group>"; };
+		168C3A052710AB0B002ABD73 /* TimeSheetListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetListView.swift; sourceTree = "<group>"; };
+		168C3A082710AC91002ABD73 /* TimeSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetView.swift; sourceTree = "<group>"; };
+		168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewModel.swift; sourceTree = "<group>"; };
+		168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSheetViewState.swift; sourceTree = "<group>"; };
 		7F82A46527107A2200188E3F /* MillenniumPass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MillenniumPass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F82A46827107A2200188E3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F82A46A27107A2200188E3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +72,8 @@
 		160BA6A927107FFA0075C30B /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				160BA6C22710858E0075C30B /* Subviews */,
-				160BA6AF271080E30075C30B /* MainView.swift */,
-				160BA6B2271081100075C30B /* MainViewModel.swift */,
-				160BA6B5271081540075C30B /* MainViewState.swift */,
+				168C3A0D2710AD29002ABD73 /* ViewModel */,
+				168C3A0C2710AD22002ABD73 /* View */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -124,6 +132,52 @@
 			path = TimeView;
 			sourceTree = "<group>";
 		};
+		168C3A072710AC77002ABD73 /* TimeSheet */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A0B2710ACEE002ABD73 /* ViewModel */,
+				168C3A0A2710ACDC002ABD73 /* View */,
+			);
+			path = TimeSheet;
+			sourceTree = "<group>";
+		};
+		168C3A0A2710ACDC002ABD73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A032710A872002ABD73 /* TimeSheetRowView.swift */,
+				168C3A052710AB0B002ABD73 /* TimeSheetListView.swift */,
+				168C3A082710AC91002ABD73 /* TimeSheetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		168C3A0B2710ACEE002ABD73 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				168C3A0E2710AD4B002ABD73 /* TimeSheetViewModel.swift */,
+				168C3A102710AD59002ABD73 /* TimeSheetViewState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		168C3A0C2710AD22002ABD73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6C22710858E0075C30B /* Subviews */,
+				160BA6AF271080E30075C30B /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		168C3A0D2710AD29002ABD73 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				160BA6B2271081100075C30B /* MainViewModel.swift */,
+				160BA6B5271081540075C30B /* MainViewState.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		7F82A45C27107A2200188E3F = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				160BA6AA271080250075C30B /* Utils */,
+				168C3A072710AC77002ABD73 /* TimeSheet */,
 				160BA6A927107FFA0075C30B /* MainView */,
 				7F82A46827107A2200188E3F /* AppDelegate.swift */,
 				7F82A46A27107A2200188E3F /* SceneDelegate.swift */,
@@ -235,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				160BA6BB2710826A0075C30B /* View+Ext.swift in Sources */,
+				168C3A062710AB0B002ABD73 /* TimeSheetListView.swift in Sources */,
 				160BA6DE2710993B0075C30B /* TimeView.swift in Sources */,
 				160BA6CC27108B0B0075C30B /* NewsList.swift in Sources */,
 				160BA6BF271082A50075C30B /* SpinnerView.swift in Sources */,
@@ -242,9 +298,13 @@
 				160BA6B6271081540075C30B /* MainViewState.swift in Sources */,
 				7F82A46B27107A2200188E3F /* SceneDelegate.swift in Sources */,
 				160BA6AC271080460075C30B /* ViewModel.swift in Sources */,
+				168C3A0F2710AD4B002ABD73 /* TimeSheetViewModel.swift in Sources */,
 				160BA6B0271080E30075C30B /* MainView.swift in Sources */,
+				168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */,
+				168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */,
 				160BA6D0271091750075C30B /* Colors.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
+				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
 				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
 				160BA6B3271081100075C30B /* MainViewModel.swift in Sources */,
 				160BA6C4271085B60075C30B /* MainContentView.swift in Sources */,
