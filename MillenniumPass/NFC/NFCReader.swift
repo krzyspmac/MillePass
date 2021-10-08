@@ -43,7 +43,7 @@ final class NFCReader: NSObject {
 
     enum LoggedInState {
         case idle
-        case loggedIn(_ user: User)
+        case loggedIn
         case unauthorized
     }
 
@@ -110,7 +110,7 @@ final class NFCReader: NSObject {
         session?.alertMessage = "Asking for priviledges…"
 
         iso7816Tag.sendCommand(apdu: apdu) { (data, p1, p2, error) in
-            guard error == nil else { fatalError() }
+            guard error == nil else { return }
 
             if let commandType = data.commandType {
                 switch commandType {
@@ -119,11 +119,9 @@ final class NFCReader: NSObject {
                     fatalError()
                     break
                 case .signIn:
-                    let userId: UInt8? = data.count >= 3 ? data[2] : nil
-                    print("userId = \(String(describing: userId))")
-                    if let userId = userId, let user = User.fromIdentifier(userId) {
-                        print("user = \(user)")
-                        completion(.loggedIn(user))
+                    let isLoggedIn: UInt8? = data.count >= 3 ? data[2] : nil
+                    if isLoggedIn == 1 {
+                        completion(.loggedIn)
                     } else {
                         completion(.unauthorized)
                     }

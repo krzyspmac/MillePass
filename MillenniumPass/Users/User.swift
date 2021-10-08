@@ -29,7 +29,7 @@ extension User{
 
 extension User {
 
-    var iamge: UIImage? {
+    var image: UIImage? {
         guard let data = Data(base64Encoded: imageBase64),
               let image = UIImage(data: data)
         else { return nil }
