@@ -91,8 +91,10 @@ final class NFCReader: NSObject {
 
             self.tagInfo = TagInfo(tag: tag)
             self.sendAuthorization(with: userIdentifier) { state in
-                self.state = state ?? .idle
-                self.endReading()
+                DispatchQueue.main.async {
+                    self.state = state ?? .idle
+                    self.endReading()
+                }
             }
         }
     }

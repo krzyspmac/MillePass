@@ -19,7 +19,7 @@ struct NewsListRow: View {
             VStack(alignment: .leading) {
                 Text(item.title)
                     .font(.system(.headline, design: .rounded))
-                    .foregroundColor(Color(UIColor.systemPink))
+                    .foregroundColor(.black)
                 Text(item.subTitle)
                     .font(.system(.caption, design: .rounded))
                     .foregroundColor(Color(UIColor.systemGray))
