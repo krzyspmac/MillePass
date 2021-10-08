@@ -13,7 +13,7 @@ struct NewsList: View {
     
     var body: some View {
         VStack {
-            Color.clear.frame(height: 20)
+            Color.clear.frame(height: 5)
             ForEach(Array(item.rows.enumerated()), id: \.offset) { index, rowItem in
                 NavigationLink(
                     destination: MilleStartsView(viewModel: .init(state: .idle)),
@@ -23,10 +23,10 @@ struct NewsList: View {
                     Color.separator.frame(height: 1).padding(.horizontal, 10)
                 }
             }
-            Color.clear.frame(height: 20)
+            Color.clear.frame(height: 5)
         }
         .background(Color.white)
-        .cornerRadius(30)
+        .cornerRadius(15)
     }
 }
 

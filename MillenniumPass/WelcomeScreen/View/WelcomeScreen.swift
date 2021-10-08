@@ -13,19 +13,27 @@ struct WelcomeScreen: View {
             .edgesIgnoringSafeArea(.vertical)
             .overlay(
                 VStack {
-                    Text("Witamy w Millennium Team")
-                        .font(.system(.largeTitle, design: .rounded))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                    Image("mille_icon")
-                    Text("Aby przejść dalej potrzebujesz linka od swojego przełożonego")
-                        .font(.system(.headline, design: .rounded))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
+//                    Text("Witamy w Millennium Team")
+//                        .font(.system(.largeTitle, design: .rounded))
+//                        .multilineTextAlignment(.center)
+//                        .foregroundColor(.white)
+//                        .padding(.top, 100)
+
+                    Spacer()
+
+                    VStack {
+                        Image("mille_icon")
+                        Text("Aby przejść dalej potrzebujesz linka od swojego przełożonego")
+                            .font(.system(.headline, design: .rounded))
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
+                    }
+
                     Spacer()
                     Text("Copyright © Bank Millennium SA")
                         .font(.system(.subheadline, design: .rounded))
                         .foregroundColor(.white)
+                        .padding(.bottom, 30)
                 }
                 .padding([.top, .horizontal])
                 .padding(.horizontal)

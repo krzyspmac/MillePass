@@ -17,13 +17,14 @@ struct TextMessageView: View {
             .overlay(
                 VStack {
                     Text("Poczekaj na wiadomość SMS z kodem PIN, aby aktywować aplikacje")
-                        .font(.system(.largeTitle, design: .rounded))
+                        .font(.system(.title, design: .rounded))
                         .multilineTextAlignment(.center)
                     TextField("Kod sms", text: $smsString)
-                        .font(.system(.headline, design: .rounded))
+                        .font(.system(.body, design: .rounded))
                         .multilineTextAlignment(.center)
                         .padding(20)
-                    Spacer()
+                        .textFieldStyle(.roundedBorder)
+//                    Spacer()
                     Button("Autoryzuj".uppercased()) {
                         if smsString == "1111" {
                             print("You shall pass jeden")
@@ -37,7 +38,7 @@ struct TextMessageView: View {
                             showingAlert = true
                         }
                     }
-                    .foregroundColor(.black)
+//                    .foregroundColor(.black)
                     Spacer()
                     Text("Copyright © Bank Millennium SA")
                         .font(.system(.subheadline, design: .rounded))
