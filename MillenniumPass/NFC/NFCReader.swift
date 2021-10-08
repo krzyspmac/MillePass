@@ -217,7 +217,11 @@ func == (left: [UInt8], right: [UInt8]) -> Bool {
 fileprivate extension Data {
 
     var commandPair: [UInt8] {
-        [self[0], self[1]]
+        if count >= 2 {
+            return [self[0], self[1]]
+        } else {
+            return []
+        }
     }
 
     var commandType: NFCReader.CommandType? {
