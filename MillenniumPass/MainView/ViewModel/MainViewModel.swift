@@ -11,18 +11,18 @@ import SwiftUI
 
 final class MainViewModel: ViewModel {
     
-    typealias E = MainView.Event
-    typealias S = MainView.State
+    typealias E = MainViewModel.Event
+    typealias S = MainViewModel.State
     
     @Published
-    var state: MainView.State
+    var state: MainViewModel.State
     
     // MARK: - Properties
     
     
     // MARK: - Init
     
-    init(state: MainView.State = .idle) {
+    init(state: MainViewModel.State = .idle) {
         self.state = state
     }
     

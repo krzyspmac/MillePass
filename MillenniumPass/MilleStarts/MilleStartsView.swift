@@ -14,11 +14,9 @@ struct MilleStartsView: View {
     var body: some View {
         ZStack {
             Color.backgroudColor.edgesIgnoringSafeArea(.all)
-            ScrollView {
-                content
-            }
-            .padding(.horizontal, 10)
-            .navigationBarTitle(viewModel.state.navigationBarTitle)
+            content
+                .padding(.horizontal, 10)
+                .navigationBarTitle(viewModel.state.navigationBarTitle)
         }
         .onLoad(isDebug: false, perform: { viewModel.add(.onAppear) })
     }
@@ -28,7 +26,7 @@ struct MilleStartsView: View {
         case .idle:
             return Color.clear.asAnyView
         case .loading:
-            return SpinnerView(isAnimating: true, style: .large).asAnyView
+            return MilleLoaderView().asAnyView
         case .error(let error):
             return Text(error.localizedDescription).asAnyView
         case .loaded(let data):
@@ -37,12 +35,14 @@ struct MilleStartsView: View {
     }
     
     private func mainView(with item: MilleStartsView.Item) -> some View {
-        VStack {
-            Color.clear.frame(height: 20)
-            ForEach(Array(item.rows.enumerated()), id: \.offset) { index, itemRow in
-                MilleStartsRowView(item: itemRow)
+        ScrollView {
+            VStack {
+                Color.clear.frame(height: 20)
+                ForEach(Array(item.rows.enumerated()), id: \.offset) { index, itemRow in
+                    MilleStartsRowView(item: itemRow)
+                }
+                Color.clear.frame(height: 20)
             }
-            Color.clear.frame(height: 20)
         }
     }
 }
