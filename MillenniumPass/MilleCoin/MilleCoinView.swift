@@ -40,30 +40,27 @@ struct MilleCoinView: View {
     private func mainView(with item: MilleCoinView.Item) -> some View {
         ScrollView {
             VStack {
-//                HStack {
-//                    Text("Co to jest Millecoin?")
-//                        .font(.headline)
-//                    Spacer()
-//                }
                 FlippingView(coins: item.coins)
                 Color.clear.frame(height: 20)
                 HStack {
-                    Text("Jest to waluta do wykorzystania u partnerów banku.Możesz ją wymienić na wspaniałe nagrody.")
-                        .font(.caption)
+                    Spacer()
+                    Text("Choose how to spend your coins!")
+                        .font(.headline)
                     Spacer()
                 }
+
                 Color.clear.frame(height: 20)
                 HStack(spacing: 0) {
-                    Text("Twoje millecoiny: ")
-                        .font(.body)
-                    Text(item.coins)
-                        .font(.headline)
-                    Image("mille_icon")
-                        .renderingMode(.template)
-                        .resizable()
-                        .frame(width: 15, height: 15)
-                        .foregroundColor(.magenta)
-                    Spacer()
+//                    Text("Twoje millecoiny: ")
+//                        .font(.body)
+//                    Text(item.coins)
+//                        .font(.headline)
+//                    Image("mille_icon")
+//                        .renderingMode(.template)
+//                        .resizable()
+//                        .frame(width: 15, height: 15)
+//                        .foregroundColor(.magenta)
+//                    Spacer()
                 }
                 
                 Button {

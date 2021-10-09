@@ -85,13 +85,13 @@ struct FrontCard : View {
               Circle()
                   .stroke(style: StrokeStyle( lineWidth: 5, dash: [3]))
                   .foregroundColor(.magenta)
-                  .frame(width: 100, height: 100)
+                  .frame(width: 200, height: 200)
               Image("mille_icon")
                   .renderingMode(.template)
                   .resizable()
-                  .frame(width: 60, height: 60)
+                  .frame(width: 60*2, height: 60*2)
                   .foregroundColor(.magenta)
-          }.frame(height: 100)
+          }.frame(height: 200)
       }
 }
 
@@ -102,10 +102,10 @@ struct BackCard : View {
               Circle()
                   .stroke(style: StrokeStyle( lineWidth: 5, dash: [3]))
                   .foregroundColor(.magenta)
-                  .frame(width: 100, height: 100)
+                  .frame(width: 200, height: 200)
               Text(coins)
-                  .font(.largeTitle)
+                  .font(.system(size: 70))
                   .bold()
-          }.frame(height: 100)
+          }.frame(height: 200)
       }
 }

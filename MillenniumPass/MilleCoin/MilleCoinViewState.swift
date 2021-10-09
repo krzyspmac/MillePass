@@ -17,7 +17,7 @@ extension MilleCoinViewModel {
         case loading
         case loaded(item: MilleCoinView.Item)
         case error(error: Error)
-        var navigationBarTitle: String { "Co to jest Millecoin?" }
+        var navigationBarTitle: String { "Your Millecoins" }
     }
 }
 
