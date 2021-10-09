@@ -23,7 +23,7 @@ final class RootViewModel: ObservableObject {
 
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.state = .sms
+//            self.state = .sms
         }
     }
 }
