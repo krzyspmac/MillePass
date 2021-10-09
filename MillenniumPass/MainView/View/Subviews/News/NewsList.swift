@@ -15,13 +15,13 @@ struct NewsList: View {
         VStack {
             Color.clear.frame(height: 5)
             
-            let item1 = NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy")
+            let item1 = NewsListRow.Item(id: "1", title: "Mille Beginnings", subTitle: "Pierwsze dni w pracy", milleIcon: "info.circle.fill", milleIconTint: .blue)
             NavigationLink(
                 destination: MilleStartsView(viewModel: .init(state: .idle)),
                 label: { NewsListRow(item: item1) }
             )
             
-            let item2 = NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki")
+            let item2 = NewsListRow.Item(id: "2", title: "MilleCoins", subTitle: "Drobniaki na mille wydatki", milleIcon: "waveform.circle.fill", milleIconTint: .green)
             
             Color.separator.frame(height: 1).padding(.horizontal, 10)
             
@@ -41,9 +41,9 @@ struct NewsList: View {
 //                }
 //            }
             Color.clear.frame(height: 5)
-        }
+        }   
         .background(Color.white)
-        .cornerRadius(15)
+        .cornerRadius(10)
     }
 }
 
@@ -63,8 +63,8 @@ extension NewsList {
     
     static var mockItems: [NewsListRow.Item] {
         [
-            NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy"),
-            NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki"),
+            NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy", milleIcon: "flame", milleIconTint: .magenta),
+            NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki", milleIcon: "flame", milleIconTint: .magenta),
 //            NewsListRow.Item(id: "3", title: "Mille godziny", subTitle: "Twoje godziny w pracy"),
         ]
     }

@@ -55,6 +55,7 @@ final class NFCReader: NSObject {
         case invalidAID(NFCISO7816Tag)
         case couldNotConnectToTag(NFCISO7816Tag)
         case sessionInvalidate(Error)
+        case notAuthorized
         case end
     }
 
@@ -74,8 +75,8 @@ final class NFCReader: NSObject {
         session?.begin()
     }
 
-    func endReading() {
-        invalidateSession(error: nil)
+    func endReading(error: TagReadingError? = nil) {
+        invalidateSession(error: error)
     }
 
     private func connectToTag(_ tag: NFCTag) {
@@ -93,7 +94,14 @@ final class NFCReader: NSObject {
             self.sendAuthorization(with: userIdentifier) { state in
                 DispatchQueue.main.async {
                     self.state = state ?? .idle
-                    self.endReading()
+                    switch self.state {
+                    case .idle:
+                        self.endReading()
+                    case .loggedIn:
+                        self.endReading()
+                    case .unauthorized:
+                        self.endReading(error: .notAuthorized)
+                    }
                 }
             }
         }
@@ -186,6 +194,8 @@ fileprivate extension NFCReader.TagReadingError {
                 return "couldNotConnectToTag"
             case .sessionInvalidate(_):
                 return "sessionInvalidate"
+            case .notAuthorized:
+                return "Unauthorized"
             case .end:
                 return "end"
         }

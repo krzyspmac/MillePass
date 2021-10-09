@@ -55,17 +55,3 @@ extension MainContentView {
         let newsListItem: NewsList.Item
     }
 }
-
-struct LoggedInView: View {
-    
-    @StateObject
-    var userManager: UserManager = .shared
-    
-    var body: some View {
-        if userManager.isLoggedIn {
-            Text("Logged In")
-        } else {
-            EmptyView()
-        }
-    }
-}

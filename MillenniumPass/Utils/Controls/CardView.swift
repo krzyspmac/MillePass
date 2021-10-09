@@ -16,22 +16,32 @@ struct CardView: View {
             Color.magenta
                 .asAnyView
                 .aspectRatio(1.58, contentMode: .fit)
-            
             Image("mille_icon")
                 .resizable()
                 .frame(width: 150, height: 150)
                 .opacity(0.1)
-            
-            HStack {
-                Text(item.name).padding()
-                Spacer()
-                if let image = item.uiImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .frame(width: 70, height: 80)
-                        .padding()
+            VStack {
+                HStack {
+                    Spacer()
+
+                    if let image = item.uiImage {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 90, height: 120)
+                            .padding()
+                    }
                 }
-                
+
+                Spacer()
+
+                HStack {
+                    Text(item.name)
+                        .foregroundColor(.white)
+                        .padding()
+
+                    Spacer()
+                }
             }
         }
         .cornerRadius(10)

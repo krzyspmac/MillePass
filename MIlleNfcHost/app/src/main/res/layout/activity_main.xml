@@ -24,7 +24,8 @@
     android:src="@drawable/tripod_gate"
     android:scaleType="centerCrop"
     android:adjustViewBounds="true"
-
+    android:layout_marginBottom="70dp"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent"/>
@@ -34,7 +35,8 @@
     android:id="@+id/buttonStartService"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textSize="20sp"
+    android:textSize="24sp"
+    android:textColor="@color/magenta"
     android:layout_marginTop="20dp"
     android:text="Scan your card!"
     app:layout_constraintLeft_toLeftOf="parent"

@@ -16,7 +16,7 @@ final class UserManager: ObservableObject {
     var user: User?
 
     @Published
-    var isLoggedIn: Bool = false
+    var isLoggedIn: Bool =  false
 
     init() {
         NFCReader.shared.delegate = self

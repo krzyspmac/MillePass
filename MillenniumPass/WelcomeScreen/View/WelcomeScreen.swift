@@ -23,7 +23,7 @@ struct WelcomeScreen: View {
 
                     VStack {
                         Image("mille_icon")
-                        Text("Aby przejść dalej potrzebujesz linka od swojego przełożonego")
+                        Text("Please check your mailbox for the activation link!")
                             .font(.system(.headline, design: .rounded))
                             .multilineTextAlignment(.center)
                             .foregroundColor(.white)

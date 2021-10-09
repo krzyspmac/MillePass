@@ -31,8 +31,8 @@ enum MockFactory {
             static var newsListItem: NewsList.Item {
                 .init(rows:
                         [
-                            NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy"),
-                            NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki"),
+                            NewsListRow.Item(id: "1", title: "Mille Beginnings", subTitle: "Pierwsze dni w pracy", milleIcon: "info.circle.fill", milleIconTint: .blue),
+                            NewsListRow.Item(id: "2", title: "MilleCoins", subTitle: "Drobniaki na mille wydatki", milleIcon: "waveform.circle.fill", milleIconTint: .green),
 //                            NewsListRow.Item(id: "3", title: "Mille godziny", subTitle: "Twoje godziny w pracy"),
                         ]
                 )

@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">MIlleNfcHost</string>
+  <string name="app_name">Mille NFC Gate</string>
   <string name="servicedesc">Mille APDU Service</string>
-  <string name="aiddescription">Mille AID description</string>
+  <string name="aiddescription">Mille gate AID code</string>
 </resources>

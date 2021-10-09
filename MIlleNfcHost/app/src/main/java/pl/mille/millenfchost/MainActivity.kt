@@ -22,4 +22,9 @@ class MainActivity : AppCompatActivity() {
         startService(serviceIntent)
         Log.v("NFCLOL", "start tapped")*/
     }
+
+    override fun onResume() {
+        super.onResume()
+
+    }
 }

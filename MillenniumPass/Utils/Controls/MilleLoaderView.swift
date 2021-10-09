@@ -13,18 +13,16 @@ struct MilleLoaderView: View {
     
     var body: some View {
         ZStack {
-            
             Image("mille_icon-colorful")
                 .resizable()
                 .frame(width: 60, height: 60)
-            
             Circle()
-                .stroke(Color(.systemGray5), lineWidth: 10)
+                .stroke(Color(.systemGray5), lineWidth: 5.0)
                 .frame(width: 100, height: 100)
-            
             Circle()
                 .trim(from: 0, to: 0.2)
-                .stroke(Color.magenta, lineWidth: 5)
+                .stroke(style: StrokeStyle(lineWidth: 5.0, lineCap: .round))
+                .foregroundColor(.magenta)
                 .frame(width: 100, height: 100)
                 .rotationEffect(Angle(degrees: isLoading ? 360 : 0))
                 .onAppear() {

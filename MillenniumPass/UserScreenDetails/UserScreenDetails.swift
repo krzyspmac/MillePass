@@ -12,46 +12,58 @@ struct UserScreenDetails: View {
     var user: User
 
     var body: some View {
-        VStack(alignment: .center, spacing: 20, content: {
-            Image(uiImage: user.uiImage ?? UIImage())
-            
-            VStack(alignment: .leading, spacing: 20, content: {
-              
-                Text("Departament rozwoju aplikacji")
-                    .font(.system(.title2, design: .rounded))
-                    .multilineTextAlignment(.center)
-                    .lineLimit(nil)
-                HStack {
-                    Text("Imię i nazwisko:")
-                        .font(.system(.title2, design: .rounded))
+        ScrollView {
+            VStack(alignment: .center, spacing: 20, content: {
+                Image(uiImage: user.uiImage ?? UIImage())
+
+                VStack(alignment: .leading, spacing: 0, content: {
+
+                    Text("Department")
+                        .font(.system(.callout))
+
+                    Text("Departament rozwoju aplikacji")
+                        .font(.system(.body, design: .rounded))
                         .bold()
-                        .multilineTextAlignment(.leading)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+
+                    VSPacer()
+
+                    Text("Name")
+                        .font(.system(.callout))
+
                     Text("\(user.name) \(user.surname)")
-                        .font(.system(.title2, design: .rounded))
-                        .multilineTextAlignment(.leading)
-                }
-                
-                HStack {
-                    Text("E-mail:")
-                        .font(.system(.title2, design: .rounded))
+                        .font(.system(.body, design: .rounded))
                         .bold()
                         .multilineTextAlignment(.center)
+                        .lineLimit(nil)
+
+                    VSPacer()
+
+                    Text("Email")
+                        .font(.system(.callout))
+
                     Text("szymon.szysz@bankmillennium.pl")
-                        .font(.system(.title2, design: .rounded))
-                        .multilineTextAlignment(.center)
-                }
-                
-                HStack {
-                    Text("XNUC:")
-                        .font(.system(.title2, design: .rounded))
+                        .font(.system(.body, design: .rounded))
                         .bold()
                         .multilineTextAlignment(.center)
-                    Text("X170213")
-                        .font(.system(.title2, design: .rounded))
-                        .multilineTextAlignment(.center)
-                }
+                        .lineLimit(nil)
+                        .foregroundColor(.magenta)
+
+                })
+                .frame(width: .infinity, height: .infinity, alignment: .top)
             })
-        })
+            .padding()
+        }
+    }
+}
+
+fileprivate struct VSPacer: View {
+
+    var height: CGFloat = 20.0
+
+    var body: some View {
+        HStack { }.frame(width: .infinity, height: height, alignment: .top)
     }
 }
 

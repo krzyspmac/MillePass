@@ -15,15 +15,20 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                Color.backgroudColor.edgesIgnoringSafeArea(.all)
+                
                 content
                     .navigationBarTitle(viewModel.state.navigationBarTitle)
             }
+
+
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     NavigationLink {
                         UserScreenDetails(user: UserManager.shared.user!)
                     } label: {
-                        Text("Press me")
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.magenta)
                     }
                 }
             })
