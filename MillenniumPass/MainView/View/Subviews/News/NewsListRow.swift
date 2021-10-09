@@ -29,7 +29,7 @@ struct NewsListRow: View {
             Spacer()
             Image(systemName: "chevron.right")
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(.magenta)
+//                .foregroundColor(.magenta)
         }
         .padding(.horizontal, 15)
         .padding(.vertical, 5)

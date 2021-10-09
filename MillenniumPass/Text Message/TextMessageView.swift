@@ -16,16 +16,19 @@ struct TextMessageView: View {
             .edgesIgnoringSafeArea(.vertical)
             .overlay(
                 VStack {
-                    Text("Poczekaj na wiadomość SMS z kodem PIN, aby aktywować aplikacje")
+                    Text("Time to activate!")
                         .font(.system(.title, design: .rounded))
                         .multilineTextAlignment(.center)
-                    TextField("Kod sms", text: $smsString)
+                    Text("Enter the sms code")
+                        .font(.system(.body, design: .rounded))
+                        .multilineTextAlignment(.center)
+                    TextField("SMS code", text: $smsString)
                         .font(.system(.body, design: .rounded))
                         .multilineTextAlignment(.center)
                         .padding(20)
                         .textFieldStyle(.roundedBorder)
 //                    Spacer()
-                    Button("Autoryzuj".uppercased()) {
+                    Button("Authorize".uppercased()) {
                         if smsString == "1111" {
                             print("You shall pass jeden")
                             UserManager.shared.user = User.fromIdentifier(1)
@@ -43,10 +46,8 @@ struct TextMessageView: View {
                     Text("Copyright © Bank Millennium SA")
                         .font(.system(.subheadline, design: .rounded))
                         .foregroundColor(.white)
-
                 }
                 .padding([.top, .horizontal])
-                .padding(.horizontal)
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Noooooo!"), message: Text("You shall not pass !!!"), dismissButton: .cancel())
                 }
