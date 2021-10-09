@@ -27,6 +27,7 @@ struct TextMessageView: View {
                         .multilineTextAlignment(.center)
                         .padding(20)
                         .textFieldStyle(.roundedBorder)
+                        .keyboardType(.numberPad)
 //                    Spacer()
                     Button("Authorize".uppercased()) {
                         if smsString == "1111" {

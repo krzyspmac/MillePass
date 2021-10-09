@@ -88,7 +88,7 @@ final class NFCReader: NSObject {
                 return
             }
 
-            let userIdentifier = "asdds"//UIDevice.current.identifierForVendor!.uuidString
+            let userIdentifier = UIDevice.current.identifierForVendor!.uuidString
 
             self.tagInfo = TagInfo(tag: tag)
             self.sendAuthorization(with: userIdentifier) { state in
