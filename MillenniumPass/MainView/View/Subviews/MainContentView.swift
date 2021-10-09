@@ -11,16 +11,32 @@ struct MainContentView: View {
     
     let item: Item
     
+    @StateObject
+    var userManager: UserManager = .shared
+    
     var body: some View {
-        ScrollView {
-            VStack {
-                Image(item.cardImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                
-                TimeView(item: item.timeViewItem)
-                
-                NewsList(item: item.newsListItem)
+        ZStack {
+            Color.backgroudColor.edgesIgnoringSafeArea(.all)
+            
+            ScrollView {
+                VStack {
+                    
+                    let name = UserManager.shared.user?.name ?? "Szymon"
+                    let surname = UserManager.shared.user?.surname ?? "Szysz"
+                    let image = UserManager.shared.user?.uiImage
+                    
+                    CardView(item: .init(
+                        name: name + " " + surname,
+                        uiImage: image)
+                    )
+                    .onTapGesture {
+                        NFCReader.shared.startReading()
+                    }
+                    
+                    LoggedInView(userManager: userManager)
+                    
+                    NewsList(item: item.newsListItem)
+                }
             }
         }
     }
@@ -39,4 +55,3 @@ extension MainContentView {
         let newsListItem: NewsList.Item
     }
 }
-

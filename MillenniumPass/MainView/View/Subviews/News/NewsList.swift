@@ -13,7 +13,7 @@ struct NewsList: View {
     
     var body: some View {
         VStack {
-            Color.clear.frame(height: 20)
+            Color.clear.frame(height: 5)
             ForEach(Array(item.rows.enumerated()), id: \.offset) { index, rowItem in
                 NavigationLink(
                     destination: MilleStartsView(viewModel: .init(state: .idle)),
@@ -23,10 +23,10 @@ struct NewsList: View {
                     Color.separator.frame(height: 1).padding(.horizontal, 10)
                 }
             }
-            Color.clear.frame(height: 20)
-        }
+            Color.clear.frame(height: 5)
+        }   
         .background(Color.white)
-        .cornerRadius(30)
+        .cornerRadius(10)
     }
 }
 
@@ -46,9 +46,9 @@ extension NewsList {
     
     static var mockItems: [NewsListRow.Item] {
         [
-            NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy"),
-            NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki"),
-            NewsListRow.Item(id: "3", title: "Mille godziny", subTitle: "Twoje godziny w pracy"),
+            NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy", milleIcon: "flame", milleIconTint: .magenta),
+            NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki", milleIcon: "flame", milleIconTint: .magenta),
+//            NewsListRow.Item(id: "3", title: "Mille godziny", subTitle: "Twoje godziny w pracy"),
         ]
     }
 }

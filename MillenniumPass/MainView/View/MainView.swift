@@ -16,12 +16,26 @@ struct MainView: View {
         NavigationView {
             ZStack {
                 Color.backgroudColor.edgesIgnoringSafeArea(.all)
+                
                 content
-                    .padding(.horizontal, 10)
                     .navigationBarTitle(viewModel.state.navigationBarTitle)
             }
+
+
+            .toolbar(content: {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        UserScreenDetails(user: UserManager.shared.user!)
+                    } label: {
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.magenta)
+                    }
+                }
+            })
         }
-        .onLoad(isDebug: false, perform: { viewModel.add(.onAppear) })
+        .onAppear {
+            viewModel.add(.onAppear)
+        }        
     }
     
     private var content: some View {
@@ -39,6 +53,7 @@ struct MainView: View {
     
     private func mainView(with item: MainContentView.Item) -> some View {
         return MainContentView(item: item)
+            .padding(.horizontal, 10)
     }
 }
 

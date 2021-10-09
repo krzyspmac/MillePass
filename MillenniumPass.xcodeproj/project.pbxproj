@@ -29,6 +29,7 @@
 		168C3A1B2710D35B002ABD73 /* MilleStartsViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A1A2710D35B002ABD73 /* MilleStartsViewState.swift */; };
 		168C3A1D2710D363002ABD73 /* MilleStartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A1C2710D363002ABD73 /* MilleStartsViewModel.swift */; };
 		168C3A1F2710D435002ABD73 /* MilleStartsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A1E2710D435002ABD73 /* MilleStartsRowView.swift */; };
+		168C3A212710EA54002ABD73 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C3A202710EA54002ABD73 /* CardView.swift */; };
 		7F0923332710DE5A00E58098 /* NFCReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0923312710DE5A00E58098 /* NFCReader.swift */; };
 		7F0923362710DE7900E58098 /* 1.user.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F0923352710DE7900E58098 /* 1.user.json */; };
 		7F82A46927107A2200188E3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F82A46827107A2200188E3F /* AppDelegate.swift */; };
@@ -37,8 +38,13 @@
 		7F82A46F27107A2300188E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A46E27107A2300188E3F /* Assets.xcassets */; };
 		7F82A47227107A2300188E3F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47127107A2300188E3F /* Preview Assets.xcassets */; };
 		7F82A47527107A2300188E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F82A47327107A2300188E3F /* LaunchScreen.storyboard */; };
+		7F89A2B12710E4F70039828B /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B02710E4F70039828B /* UserManager.swift */; };
+		7F89A2B42710E64D0039828B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B32710E64D0039828B /* RootView.swift */; };
+		7F89A2B62710E66F0039828B /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B52710E66F0039828B /* RootViewModel.swift */; };
+		7F89A2B9271130620039828B /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89A2B8271130620039828B /* LoggedInView.swift */; };
 		7FB294502710E48700266FDF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB2944F2710E48700266FDF /* User.swift */; };
 		AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60E9D62710E028001BC52D /* TextMessageView.swift */; };
+		AD60E9E02710FD11001BC52D /* UserScreenDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60E9DF2710FD11001BC52D /* UserScreenDetails.swift */; };
 		ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +71,7 @@
 		168C3A1A2710D35B002ABD73 /* MilleStartsViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleStartsViewState.swift; sourceTree = "<group>"; };
 		168C3A1C2710D363002ABD73 /* MilleStartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleStartsViewModel.swift; sourceTree = "<group>"; };
 		168C3A1E2710D435002ABD73 /* MilleStartsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilleStartsRowView.swift; sourceTree = "<group>"; };
+		168C3A202710EA54002ABD73 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7F09232E2710DE4F00E58098 /* MillenniumPass.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MillenniumPass.entitlements; sourceTree = "<group>"; };
 		7F0923312710DE5A00E58098 /* NFCReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCReader.swift; sourceTree = "<group>"; };
 		7F0923352710DE7900E58098 /* 1.user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 1.user.json; sourceTree = "<group>"; };
@@ -76,8 +83,13 @@
 		7F82A47127107A2300188E3F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F82A47427107A2300188E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F82A47627107A2300188E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F89A2B02710E4F70039828B /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		7F89A2B32710E64D0039828B /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7F89A2B52710E66F0039828B /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		7F89A2B8271130620039828B /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		7FB2944F2710E48700266FDF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AD60E9D62710E028001BC52D /* TextMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessageView.swift; sourceTree = "<group>"; };
+		AD60E9DF2710FD11001BC52D /* UserScreenDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenDetails.swift; sourceTree = "<group>"; };
 		ADD559872710DA6E00CBCB52 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +137,7 @@
 			children = (
 				160BA6BE271082A50075C30B /* SpinnerView.swift */,
 				168C3A152710D0F7002ABD73 /* MilleLoaderView.swift */,
+				168C3A202710EA54002ABD73 /* CardView.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -234,6 +247,7 @@
 			children = (
 				7FB2944F2710E48700266FDF /* User.swift */,
 				7F0923352710DE7900E58098 /* 1.user.json */,
+				7F89A2B02710E4F70039828B /* UserManager.swift */,
 			);
 			path = Users;
 			sourceTree = "<group>";
@@ -257,6 +271,9 @@
 		7F82A46727107A2200188E3F /* MillenniumPass */ = {
 			isa = PBXGroup;
 			children = (
+				7F89A2B7271130560039828B /* Logged In VIew */,
+				AD60E9DE2710FCFA001BC52D /* UserScreenDetails */,
+				7F89A2B22710E6430039828B /* RootView */,
 				AD60E9D82710E172001BC52D /* Text Message */,
 				7F09232F2710DE5A00E58098 /* NFC */,
 				7F09232E2710DE4F00E58098 /* MillenniumPass.entitlements */,
@@ -286,12 +303,37 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		7F89A2B22710E6430039828B /* RootView */ = {
+			isa = PBXGroup;
+			children = (
+				7F89A2B32710E64D0039828B /* RootView.swift */,
+				7F89A2B52710E66F0039828B /* RootViewModel.swift */,
+			);
+			path = RootView;
+			sourceTree = "<group>";
+		};
+		7F89A2B7271130560039828B /* Logged In VIew */ = {
+			isa = PBXGroup;
+			children = (
+				7F89A2B8271130620039828B /* LoggedInView.swift */,
+			);
+			path = "Logged In VIew";
+			sourceTree = "<group>";
+		};
 		AD60E9D82710E172001BC52D /* Text Message */ = {
 			isa = PBXGroup;
 			children = (
 				AD60E9D62710E028001BC52D /* TextMessageView.swift */,
 			);
 			path = "Text Message";
+			sourceTree = "<group>";
+		};
+		AD60E9DE2710FCFA001BC52D /* UserScreenDetails */ = {
+			isa = PBXGroup;
+			children = (
+				AD60E9DF2710FD11001BC52D /* UserScreenDetails.swift */,
+			);
+			path = UserScreenDetails;
 			sourceTree = "<group>";
 		};
 		ADD559852710DA5600CBCB52 /* WelcomeScreen */ = {
@@ -399,16 +441,22 @@
 				168C3A112710AD59002ABD73 /* TimeSheetViewState.swift in Sources */,
 				168C3A092710AC91002ABD73 /* TimeSheetView.swift in Sources */,
 				160BA6D0271091750075C30B /* Colors.swift in Sources */,
+				7F89A2B12710E4F70039828B /* UserManager.swift in Sources */,
 				168C3A142710B6BA002ABD73 /* MockFactory.swift in Sources */,
 				168C3A192710D354002ABD73 /* MilleStartsView.swift in Sources */,
 				7F82A46D27107A2200188E3F /* ContentView.swift in Sources */,
 				168C3A042710A872002ABD73 /* TimeSheetRowView.swift in Sources */,
+				AD60E9E02710FD11001BC52D /* UserScreenDetails.swift in Sources */,
 				168C3A1B2710D35B002ABD73 /* MilleStartsViewState.swift in Sources */,
+				7F89A2B42710E64D0039828B /* RootView.swift in Sources */,
 				AD60E9D72710E028001BC52D /* TextMessageView.swift in Sources */,
 				160BA6C8271088620075C30B /* NewsListRow.swift in Sources */,
 				ADD559882710DA6E00CBCB52 /* WelcomeScreen.swift in Sources */,
 				168C3A162710D0F7002ABD73 /* MilleLoaderView.swift in Sources */,
+				7F89A2B9271130620039828B /* LoggedInView.swift in Sources */,
 				160BA6B3271081100075C30B /* MainViewModel.swift in Sources */,
+				7F89A2B62710E66F0039828B /* RootViewModel.swift in Sources */,
+				168C3A212710EA54002ABD73 /* CardView.swift in Sources */,
 				160BA6C4271085B60075C30B /* MainContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

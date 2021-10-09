@@ -12,36 +12,42 @@ struct TextMessageView: View {
     @State private var showingAlert = false
     
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color.white, Color(.magenta)]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [Color.white, Color.white]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.vertical)
             .overlay(
                 VStack {
-                    Text("Poczekaj na wiadomość SMS z kodem PIN, aby aktywować aplikacje")
-                        .font(.system(.largeTitle, design: .rounded))
+                    Text("Time to activate!")
+                        .font(.system(.title, design: .rounded))
                         .multilineTextAlignment(.center)
-                    TextField("Kod sms", text: $smsString)
-                        .font(.system(.headline, design: .rounded))
+                    Text("Enter the sms code")
+                        .font(.system(.body, design: .rounded))
+                        .multilineTextAlignment(.center)
+                    TextField("SMS code", text: $smsString)
+                        .font(.system(.body, design: .rounded))
                         .multilineTextAlignment(.center)
                         .padding(20)
-                    Spacer()
-                    Button("Autoryzuj".uppercased()) {
+                        .textFieldStyle(.roundedBorder)
+//                    Spacer()
+                    Button("Authorize".uppercased()) {
                         if smsString == "1111" {
                             print("You shall pass jeden")
+                            UserManager.shared.user = User.fromIdentifier(1)
+                            RootViewModel.shared.state = .main
                         } else if smsString == "2222" {
                             print("You shall pass dwa")
+                            UserManager.shared.user = User.fromIdentifier(2)
+                            RootViewModel.shared.state = .main
                         } else {
                             showingAlert = true
                         }
                     }
-                    .foregroundColor(.black)
+//                    .foregroundColor(.black)
                     Spacer()
                     Text("Copyright © Bank Millennium SA")
                         .font(.system(.subheadline, design: .rounded))
                         .foregroundColor(.white)
-
                 }
                 .padding([.top, .horizontal])
-                .padding(.horizontal)
                 .alert(isPresented: $showingAlert) {
                     Alert(title: Text("Noooooo!"), message: Text("You shall not pass !!!"), dismissButton: .cancel())
                 }

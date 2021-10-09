@@ -7,8 +7,9 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
-struct User: Decodable{
+struct User: Decodable {
     let name: String
     let surname: String
     let imageBase64: String
@@ -29,10 +30,18 @@ extension User{
 
 extension User {
 
-    var image: UIImage? {
+    var uiImage: UIImage? {
         guard let data = Data(base64Encoded: imageBase64),
               let image = UIImage(data: data)
         else { return nil }
         return image
+    }
+
+    var image: Image? {
+        if let uiImage = uiImage {
+            return Image(uiImage: uiImage)
+        } else {
+            return nil
+        }
     }
 }

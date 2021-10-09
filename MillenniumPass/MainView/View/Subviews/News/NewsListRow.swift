@@ -13,22 +13,26 @@ struct NewsListRow: View {
     
     var body: some View {
         HStack {
-            Image(item.milleIcon)
+            Image(systemName: item.milleIcon)
                 .resizable()
-                .frame(width: 50, height: 50)
+                .foregroundColor(item.milleIconTint)
+                .frame(width: 20, height: 20)
+                .scaledToFit()
             VStack(alignment: .leading) {
                 Text(item.title)
                     .font(.system(.headline, design: .rounded))
-                    .foregroundColor(Color(UIColor.systemPink))
-                Text(item.subTitle)
-                    .font(.system(.caption, design: .rounded))
-                    .foregroundColor(Color(UIColor.systemGray))
+                    .foregroundColor(.black)
+//                Text(item.subTitle)
+//                    .font(.system(.caption, design: .rounded))
+//                    .foregroundColor(Color(UIColor.systemGray))
             }
             Spacer()
             Image(systemName: "chevron.right")
                 .aspectRatio(contentMode: .fit)
+//                .foregroundColor(.magenta)
         }
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 15)
+        .padding(.vertical, 5)
     }
 }
 
@@ -37,7 +41,8 @@ extension NewsListRow {
         let id: String
         let title: String
         let subTitle: String
-        var milleIcon: String { "mille_icon" }
+        var milleIcon: String
+        var milleIconTint: Color
         
         static func == (lhs: Item, rhs: Item) -> Bool {
             return lhs.id == rhs.id
@@ -52,13 +57,17 @@ struct NewsListRow_Previews: PreviewProvider {
             NewsListRow(item: .init(
                                     id: "1",
                                     title:  "Mille początki",
-                                    subTitle: "Pierwsze dni w pracy"
+                                    subTitle: "Pierwsze dni w pracy",
+                                    milleIcon: "flame",
+                                    milleIconTint: .magenta
                                 )
             )
             NewsListRow(item: .init(
                                     id: "2",
                                     title:  "MilleCoin",
-                                    subTitle: "Drobniaki na mille wydatki"
+                                    subTitle: "Drobniaki na mille wydatki",
+                                    milleIcon: "flame",
+                                    milleIconTint: .red
                                 )
             )
         }
