@@ -16,7 +16,7 @@ struct NewsListRow: View {
             Image(systemName: item.milleIcon)
                 .resizable()
                 .foregroundColor(item.milleIconTint)
-                .frame(width: 15, height: 20)
+                .frame(width: 20, height: 20)
                 .scaledToFit()
             VStack(alignment: .leading) {
                 Text(item.title)
@@ -29,6 +29,7 @@ struct NewsListRow: View {
             Spacer()
             Image(systemName: "chevron.right")
                 .aspectRatio(contentMode: .fit)
+                .foregroundColor(.magenta)
         }
         .padding(.horizontal, 15)
         .padding(.vertical, 5)

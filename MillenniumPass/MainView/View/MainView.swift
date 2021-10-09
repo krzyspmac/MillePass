@@ -27,7 +27,8 @@ struct MainView: View {
                     NavigationLink {
                         UserScreenDetails(user: UserManager.shared.user!)
                     } label: {
-                        Text("Press me")
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.magenta)
                     }
                 }
             })
