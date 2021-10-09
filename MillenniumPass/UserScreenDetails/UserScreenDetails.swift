@@ -55,6 +55,7 @@ struct UserScreenDetails: View {
             })
             .padding()
         }
+        .navigationBarTitle("Profile")
     }
 }
 
