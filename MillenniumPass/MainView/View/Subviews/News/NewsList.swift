@@ -14,15 +14,32 @@ struct NewsList: View {
     var body: some View {
         VStack {
             Color.clear.frame(height: 5)
-            ForEach(Array(item.rows.enumerated()), id: \.offset) { index, rowItem in
-                NavigationLink(
-                    destination: MilleStartsView(viewModel: .init(state: .idle)),
-                    label: { NewsListRow(item: rowItem) }
-                )
-                if index != item.rows.count - 1 {
-                    Color.separator.frame(height: 1).padding(.horizontal, 10)
-                }
-            }
+            
+            let item1 = NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy")
+            NavigationLink(
+                destination: MilleStartsView(viewModel: .init(state: .idle)),
+                label: { NewsListRow(item: item1) }
+            )
+            
+            let item2 = NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki")
+            
+            Color.separator.frame(height: 1).padding(.horizontal, 10)
+            
+            NavigationLink(
+                destination: MilleCoinView(viewModel: .init(state: .idle)),
+                label: { NewsListRow(item: item2) }
+            )
+            
+            
+//            ForEach(Array(item.rows.enumerated()), id: \.offset) { index, rowItem in
+//                NavigationLink(
+//                    destination: MilleStartsView(viewModel: .init(state: .idle)),
+//                    label: { NewsListRow(item: rowItem) }
+//                )
+//                if index != item.rows.count - 1 {
+//                    Color.separator.frame(height: 1).padding(.horizontal, 10)
+//                }
+//            }
             Color.clear.frame(height: 5)
         }
         .background(Color.white)
