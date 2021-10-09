@@ -51,7 +51,7 @@ struct MainView: View {
     
     private func mainView(with item: MainContentView.Item) -> some View {
         return MainContentView(item: item)
-            .padding(.horizontal, 10)
+//            .padding(.horizontal, 10)
     }
 }
 
