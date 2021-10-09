@@ -98,7 +98,11 @@ final class NFCReader: NSObject {
                     case .idle:
                         self.endReading()
                     case .loggedIn:
-                        self.endReading()
+                        session.alertMessage = "Welcome!"
+
+                        DispatchQueue.main.async {
+                            self.endReading()
+                        }
                     case .unauthorized:
                         self.endReading(error: .notAuthorized)
                     }
