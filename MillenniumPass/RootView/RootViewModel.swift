@@ -22,5 +22,8 @@ final class RootViewModel: ObservableObject {
     @Published var state: State = .welcome
 
     init() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.state = .sms
+        }
     }
 }

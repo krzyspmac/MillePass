@@ -23,7 +23,9 @@ struct CardView: View {
                 .opacity(0.1)
             
             HStack {
-                Text(item.name).padding()
+                Text(item.name)
+                    .foregroundColor(.white)
+                    .padding()
                 Spacer()
                 if let image = item.uiImage {
                     Image(uiImage: image)

@@ -24,9 +24,9 @@ struct NewsList: View {
                 }
             }
             Color.clear.frame(height: 5)
-        }
+        }   
         .background(Color.white)
-        .cornerRadius(15)
+        .cornerRadius(10)
     }
 }
 
@@ -46,8 +46,8 @@ extension NewsList {
     
     static var mockItems: [NewsListRow.Item] {
         [
-            NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy"),
-            NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki"),
+            NewsListRow.Item(id: "1", title: "Mille początki", subTitle: "Pierwsze dni w pracy", milleIcon: "flame", milleIconTint: .magenta),
+            NewsListRow.Item(id: "2", title: "MilleCoin", subTitle: "Drobniaki na mille wydatki", milleIcon: "flame", milleIconTint: .magenta),
 //            NewsListRow.Item(id: "3", title: "Mille godziny", subTitle: "Twoje godziny w pracy"),
         ]
     }
