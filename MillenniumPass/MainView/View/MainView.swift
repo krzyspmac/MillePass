@@ -15,8 +15,6 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.backgroudColor.edgesIgnoringSafeArea(.all)
-                
                 content
                     .navigationBarTitle(viewModel.state.navigationBarTitle)
             }
