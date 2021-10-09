@@ -37,7 +37,7 @@ struct MainContentView: View {
                     
                     NewsList(item: item.newsListItem)
                 }
-            }
+            }.padding(.horizontal, 10)
         }
     }
 }
